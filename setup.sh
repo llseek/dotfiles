@@ -33,7 +33,7 @@ cp $ZTV_ROOT/llseek.zsh-theme ./.oh-my-zsh/themes/
 echo "Enter your sudo passwd to chsh: "
 chsh -s `which zsh`
 
-for f in .zshrc .tmux.conf .vimrc; do
+for f in .zshrc .tmux.conf .vimrc .ssh; do
   mv $f $f.old
   ln -s $ZTV_ROOT/$f
 done
