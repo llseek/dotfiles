@@ -25,6 +25,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-obsession'
 
 " default snippets (under .vim/bundle/vim-snippets/)
 "   contents:
