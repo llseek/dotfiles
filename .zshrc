@@ -112,3 +112,7 @@ export CVSEDITOR=vim
 [[ -f ~/..zshrc ]] && source ~/..zshrc
 
 # setxkbmap -option caps:ctrl_modifier
+
+alias ta='tmux attach'
+alias glog='git log --pretty=format:"%Cred%h %Cgreen%aN%Cblue%d %Creset%s"'
+alias d='dmesg | less +G'
