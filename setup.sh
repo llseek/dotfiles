@@ -35,7 +35,7 @@ echo "Enter your sudo passwd to chsh: "
 chsh -s `which zsh`
 
 for f in .zshrc .tmux.conf .vimrc .ssh .gitignore; do
-  mv $f $f.old
+  [ -f $f -o -d $f ] && mv $f $f.old
   ln -s $ZTV_ROOT/$f
 done
 
