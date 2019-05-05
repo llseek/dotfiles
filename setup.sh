@@ -23,7 +23,8 @@ $PKG_INSTALL git                \
              tmux               \
              vim                \
              ctags              \
-             global
+             global             \
+             curl
 
 if [ ! -d .oh-my-zsh ]; then
 	git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh || exit
@@ -39,10 +40,7 @@ for f in .zshrc .tmux.conf .vimrc .ssh .gitignore; do
   ln -s $ZTV_ROOT/$f
 done
 
-if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
-vim +PluginInstall +qall
+vim +PlugInstall +qall
 
 echo '    StrictHostKeyChecking no' | sudo tee -a /etc/ssh/ssh_config
 echo '    UserKnownHostsFile /dev/null' | sudo tee -a /etc/ssh/ssh_config
