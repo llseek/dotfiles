@@ -44,6 +44,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-scripts/ScrollColors'
 Plugin 'vim-scripts/ZoomWin'
 Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'skywind3000/asyncrun.vim'
 
 " iOS development specific
 "Plugin 'Rip-Rip/clang_complete'
@@ -240,3 +241,7 @@ endif
 if executable('gtags-cscope') && executable('gtags')
 	let g:gutentags_modules += ['gtags_cscope']
 endif
+
+" === AsyncRun Options ===
+let g:asyncrun_open = 6
+let g:asyncrun_bell = 1
