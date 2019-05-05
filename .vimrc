@@ -4,59 +4,57 @@
 " ci( - edit the content inside ()
 " vip - select the paragraph
 
-" === Vundle Options ===
-set nocompatible
-filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" let Vundle manage Vundle
-Plugin 'gmarik/Vundle.vim'
-Plugin 'vim-scripts/a.vim'
-Plugin 'vim-scripts/taglist.vim'
-Plugin 'vim-scripts/gtags.vim'
-Plugin 'vim-scripts/ScrollColors'
-Plugin 'vim-scripts/ZoomWin'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'scrooloose/nerdtree'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'michaeljsmith/vim-indent-object'
-Plugin 'scrooloose/syntastic'
-Plugin 'vim-scripts/TeTrIs.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'majutsushi/tagbar'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-obsession'
+" === Vim-plug Options ===
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+call plug#begin('~/.vim/plugged')
+Plug 'vim-scripts/a.vim'
+Plug 'vim-scripts/taglist.vim'
+Plug 'vim-scripts/gtags.vim'
+Plug 'vim-scripts/ScrollColors'
+Plug 'vim-scripts/ZoomWin'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'scrooloose/nerdtree'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'vim-ruby/vim-ruby'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'scrooloose/syntastic'
+Plug 'vim-scripts/TeTrIs.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'jiangmiao/auto-pairs'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-obsession'
 
 " default snippets (under .vim/bundle/vim-snippets/)
 "   contents:
 "   - snippets/*: snippets using snipMate format
 "   - UltiSnips/*: snippets using UltiSnips format
-Plugin 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 " snippet engine(python), supports all snippets in above repo
-"Plugin 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 " snippet engine(VimL), supports snippets/*
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-
-Plugin 'kien/ctrlp.vim'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'skywind3000/asyncrun.vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'kien/ctrlp.vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'skywind3000/asyncrun.vim'
 
 " iOS development specific
-"Plugin 'Rip-Rip/clang_complete'
-"Plugin 'guns/ultisnips'
-"Plugin 'terhechte/syntastic'
-"Plugin 'b4winckler/vim-objc'
-"Plugin 'eraserhd/vim-ios.git'
-call vundle#end()
+"Plug 'Rip-Rip/clang_complete'
+"Plug 'guns/ultisnips'
+"Plug 'terhechte/syntastic'
+"Plug 'b4winckler/vim-objc'
+"Plug 'eraserhd/vim-ios.git'
+call plug#end()
 
 " === General Options ===
 "let mapleader=" "
