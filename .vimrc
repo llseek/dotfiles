@@ -43,6 +43,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-scripts/ScrollColors'
 Plugin 'vim-scripts/ZoomWin'
+Plugin 'ludovicchabant/vim-gutentags'
 
 " iOS development specific
 "Plugin 'Rip-Rip/clang_complete'
@@ -229,3 +230,13 @@ let g:ctrlp_cmd = 'CtrlPMixed' " CtrlP, CtrlPBuffer, CtrlPMRU, or CtrlPMixed
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*.so,*.swp,*.zip
 set wildignore+=*\\patches\\**
+
+" === Gutentags Options ===
+let g:gutentags_project_root = ['.git', '.svn', '.hg']
+let g:gutentags_modules = []
+if executable('ctags')
+	let g:gutentags_modules += ['ctags']
+endif
+if executable('gtags-cscope') && executable('gtags')
+	let g:gutentags_modules += ['gtags_cscope']
+endif
