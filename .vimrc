@@ -12,11 +12,11 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " let Vundle manage Vundle
 Plugin 'gmarik/Vundle.vim'
-" plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'a.vim'
-Plugin 'taglist.vim'
-Plugin 'gtags.vim'
-" plugin from github repo
+Plugin 'vim-scripts/a.vim'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'vim-scripts/gtags.vim'
+Plugin 'vim-scripts/ScrollColors'
+Plugin 'vim-scripts/ZoomWin'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'scrooloose/nerdtree'
@@ -47,8 +47,6 @@ Plugin 'garbas/vim-snipmate'
 
 Plugin 'kien/ctrlp.vim'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'vim-scripts/ScrollColors'
-Plugin 'vim-scripts/ZoomWin'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'skywind3000/asyncrun.vim'
 
