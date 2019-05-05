@@ -14,6 +14,7 @@ git config user.email "yxj@gmail.com"
 git config user.name "Xiaojie Yuan"
 git config core.editor vim
 git config push.default simple
+git config --global core.excludesfile '~/.gitignore'
 
 cd $HOME
 
@@ -33,7 +34,7 @@ cp $ZTV_ROOT/llseek.zsh-theme ./.oh-my-zsh/themes/
 echo "Enter your sudo passwd to chsh: "
 chsh -s `which zsh`
 
-for f in .zshrc .tmux.conf .vimrc .ssh; do
+for f in .zshrc .tmux.conf .vimrc .ssh .gitignore; do
   mv $f $f.old
   ln -s $ZTV_ROOT/$f
 done
