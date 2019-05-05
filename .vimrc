@@ -1,3 +1,9 @@
+" === Text Objects ===
+" diw - delete the word that cursor is on
+" ciw - edit the word that cursor is on
+" ci( - edit the content inside ()
+" vip - select the paragraph
+
 " === Vundle Options ===
 set nocompatible
 filetype off
