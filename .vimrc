@@ -47,6 +47,8 @@ Plug 'kien/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'skywind3000/asyncrun.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+Plug 'junegunn/fzf.vim'
 
 " iOS development specific
 "Plug 'Rip-Rip/clang_complete'
@@ -247,3 +249,11 @@ endif
 " === AsyncRun Options ===
 let g:asyncrun_open = 6
 let g:asyncrun_bell = 1
+
+" === FZF Options ===
+map <C-f> :FZF<CR>
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+let g:fzf_layout = { 'down': '~20%' }
