@@ -116,3 +116,5 @@ export CVSEDITOR=vim
 alias ta='tmux attach'
 alias glog='git log --pretty=format:"%Cred%h %Cgreen%aN%Cblue%d %Creset%s"'
 alias d='dmesg | less +G'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
