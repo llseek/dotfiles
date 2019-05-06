@@ -43,7 +43,6 @@ Plug 'honza/vim-snippets'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
-Plug 'kien/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'skywind3000/asyncrun.vim'
@@ -228,13 +227,6 @@ nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 let g:tmux_navigator_save_on_switch = 1
-
-" === CtrlP Options ===
-let g:ctrlp_map = '<c-f>'
-let g:ctrlp_cmd = 'CtrlPMixed' " CtrlP, CtrlPBuffer, CtrlPMRU, or CtrlPMixed
-let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*.so,*.swp,*.zip
-set wildignore+=*\\patches\\**
 
 " === Gutentags Options ===
 let g:gutentags_project_root = ['.git', '.svn', '.hg']
