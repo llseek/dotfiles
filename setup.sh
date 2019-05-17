@@ -15,6 +15,7 @@ git config user.name "Xiaojie Yuan"
 git config core.editor vim
 git config push.default simple
 git config --global core.excludesfile '~/.gitignore'
+git config --global rebase.instructionformat "[%an] %s"
 
 cd $HOME
 
