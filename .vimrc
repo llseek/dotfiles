@@ -77,6 +77,9 @@ hi Visual cterm=underline ctermfg=yellow ctermbg=none
 hi Pmenu cterm=none ctermfg=yellow ctermbg=darkblue
 hi PmenuSel cterm=none ctermfg=darkblue ctermbg=yellow
 
+" == Record/Replay Options ===
+:nnoremap <space> @q
+
 " === Tab/Space Options ===
 set tabstop=8
 set shiftwidth=8
@@ -89,7 +92,7 @@ set foldmethod=syntax
 set foldcolumn=0
 set foldlevel=99
 hi Folded ctermbg=none
-nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zC' : 'zO')<CR>
+"nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zC' : 'zO')<CR>
 " refer https://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg for color-number mappings
 "if has("autocmd")
 "    au BufWinLeave * mkview
