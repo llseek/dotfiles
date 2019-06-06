@@ -144,7 +144,7 @@ set mousehide
 
 " === Quickfix Options ===
 "nnoremap <C-q> :cclose<CR> - use togglelist.vim ?
-au FileType qf call AdjustWindowHeight(3, 6)
+au FileType qf call AdjustWindowHeight(7, 12)
 function! AdjustWindowHeight(minheight, maxheight)
   exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
