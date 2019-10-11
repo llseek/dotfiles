@@ -232,6 +232,7 @@ nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 let g:tmux_navigator_save_on_switch = 1
 
 " === Gutentags Options ===
+let g:gutentags_enabled = 0
 let g:gutentags_project_root = ['.git', '.svn', '.hg']
 let g:gutentags_modules = []
 if executable('ctags')
@@ -240,6 +241,7 @@ endif
 if executable('gtags-cscope') && executable('gtags')
 	let g:gutentags_modules += ['gtags_cscope']
 endif
+au FileType gitcommit,gitrebase let g:gutentags_enabled=0
 
 " === AsyncRun Options ===
 let g:asyncrun_open = 6
