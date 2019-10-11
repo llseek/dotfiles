@@ -32,6 +32,7 @@ Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-obsession'
 Plug 'mileszs/ack.vim'
+Plug 'junegunn/gv.vim'
 
 " default snippets (under .vim/bundle/vim-snippets/)
 "   contents:
