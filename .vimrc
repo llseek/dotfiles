@@ -31,6 +31,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-obsession'
+Plug 'mileszs/ack.vim'
 
 " default snippets (under .vim/bundle/vim-snippets/)
 "   contents:
