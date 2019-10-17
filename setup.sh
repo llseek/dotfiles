@@ -49,4 +49,8 @@ echo '    UserKnownHostsFile /dev/null' | sudo tee -a /etc/ssh/ssh_config
 sudo cp $ZTV_ROOT/fonts/* /usr/share/fonts
 sudo fc-cache -f
 
+if [ -d .mozilla/firefox/*.default/chrome ]; then
+  cp firefox/userChrome.css .mozilla/firefox/*.default/chrome/
+fi
+
 echo "Asia/Shanghai" | sudo tee /etc/timezone
