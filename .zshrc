@@ -116,5 +116,6 @@ setxkbmap -option caps:ctrl_modifier
 alias ta='tmux attach'
 alias glog='git log --pretty=format:"%Cred%h %Cgreen%aN%Cblue%d %Creset%s"'
 alias d='dmesg | less +G'
+alias dl='aria2c -s 16 -x 16'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
