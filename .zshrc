@@ -108,6 +108,10 @@ export CVSROOT=ncvs:/usr/cvsroot/cev
 export CVS_RSH=ssh
 export CVSEDITOR=vim
 
+# proxy
+export http_proxy=127.0.0.1:8080
+export https_proxy=127.0.0.1:8080
+
 # source personal configs
 [[ -f ~/..zshrc ]] && source ~/..zshrc
 
