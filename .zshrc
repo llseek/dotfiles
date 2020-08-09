@@ -115,7 +115,7 @@ export https_proxy=127.0.0.1:8080
 # source personal configs
 [[ -f ~/..zshrc ]] && source ~/..zshrc
 
-setxkbmap -option caps:ctrl_modifier
+pgrep Xorg > /dev/null && setxkbmap -option caps:ctrl_modifier
 
 alias ta='tmux attach'
 alias glog='git log --pretty=format:"%Cred%h %Cgreen%aN%Cblue%d %Creset%s"'
