@@ -3,11 +3,11 @@
 ZTV_ROOT=$PWD
 
 if [ `uname -s` == 'Darwin' ]; then
-  PKG_INSTALL='brew -y install'
-elif [[ $(cat /etc/os-release) =~ "SUSE" ]]; then
-  PKG_INSTALL='sudo zypper --non-interactive install'
+  PKG_INSTALL='brew install'
+  FIREFOX_PROFILE='Library/Application\ Support/Firefox/Profiles'
 else
   PKG_INSTALL='sudo apt -y install'
+  FIREFOX_PROFILE='.mozilla/firefox'
 fi
 
 git config user.email "yxj@gmail.com"
@@ -49,8 +49,11 @@ echo '    UserKnownHostsFile /dev/null' | sudo tee -a /etc/ssh/ssh_config
 sudo cp $ZTV_ROOT/fonts/* /usr/share/fonts
 sudo fc-cache -f
 
-if [ -d .mozilla/firefox/*.default/chrome ]; then
-  cp firefox/userChrome.css .mozilla/firefox/*.default/chrome/
+if [ -d "$FIREFOX_PROFILE" ]; then
+  d=$(ls -d "$FIREFOX_PROFILE"/*default*)
+  mkdir -p "$d"/chrome
+  cp $ZTV_ROOT/firefox/userChrome.css "$d"/chrome
+  echo "Firefox's userChrome.css: $d/chrome/userChrome.css"
 fi
 
 echo "Asia/Shanghai" | sudo tee /etc/timezone
