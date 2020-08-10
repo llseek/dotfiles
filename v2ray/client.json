@@ -50,6 +50,31 @@
           "path": "/a9059e/"
         }
       }
+    },
+    {
+      "protocol": "freedom",
+      "settings": {},
+      "tag": "direct"
     }
-  ]
+  ],
+  "routing": {
+    "domainStrategy": "IPOnDemand",
+    "rules": [
+      {
+        "type": "field",
+        "outboundTag": "direct",
+        "domain": [
+          "geosite:cn"
+        ]
+      },
+      {
+        "type": "field",
+        "outboundTag": "direct",
+        "ip": [
+          "geoip:cn",
+          "geoip:private"
+        ]
+      }
+    ]
+  }
 }
