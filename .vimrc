@@ -73,7 +73,7 @@ set hlsearch
 set incsearch
 set t_Co=256
 set laststatus=2
-set colorcolumn=81
+"set colorcolumn=81
 colorscheme default
 hi Search cterm=underline ctermfg=yellow ctermbg=none
 hi Visual cterm=underline ctermfg=yellow ctermbg=none
