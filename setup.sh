@@ -33,6 +33,11 @@ if [ ! -d .oh-my-zsh ]; then
 	git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh || exit
 fi
 
+if [ ! -d .tmux/plugins/tpm ]; then
+  mkdir -p .tmux/plugins
+  git clone https://github.com/tmux-plugins/tpm .tmux/plugins/tpm
+fi
+
 cp $ZTV_ROOT/llseek.zsh-theme ./.oh-my-zsh/themes/
 
 echo "Enter your sudo passwd to chsh: "
