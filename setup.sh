@@ -52,6 +52,8 @@ mkdir -p $FONTS_DIR
 cp $ZTV_ROOT/fonts/* $FONTS_DIR
 fc-cache -f
 
+# NOTE: need to toolkit.legacyUserProfileCustomizations.stylesheets to true in about:config
+#       https://github.com/piroor/treestyletab/wiki/Code-snippets-for-custom-style-rules#slightly-betterworse-option-for-hiding-tabs-depending-on-what-you-want
 if [ -d "$FIREFOX_PROFILE" ]; then
   d=$(ls -d "$FIREFOX_PROFILE"/*default*)
   mkdir -p "$d"/chrome
