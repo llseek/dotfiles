@@ -112,6 +112,10 @@ export CVSEDITOR=vim
 export http_proxy=127.0.0.1:8080
 export https_proxy=127.0.0.1:8080
 
+# locale
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # source personal configs
 [[ -f ~/..zshrc ]] && source ~/..zshrc
 
