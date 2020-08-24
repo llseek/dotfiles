@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
+set -eu
+
 ZTV_ROOT=$PWD
 
-if [ `uname -s` == 'Darwin' ]; then
+if [ "$(uname -s)" == 'Darwin' ]; then
   PKG_INSTALL='brew install'
   FIREFOX_PROFILE='Library/Application\ Support/Firefox/Profiles'
   FONTS_DIR='Library/Fonts'
@@ -16,10 +18,10 @@ git config user.email "yxj@gmail.com"
 git config user.name "Xiaojie Yuan"
 git config core.editor vim
 git config push.default simple
-git config --global core.excludesfile '~/.gitignore'
+git config --global core.excludesfile "$HOME/.gitignore"
 git config --global rebase.instructionformat "[%an] %s"
 
-cd $HOME
+cd "$HOME"
 
 $PKG_INSTALL git                \
              zsh                \
@@ -38,14 +40,14 @@ if [ ! -d .tmux/plugins/tpm ]; then
   git clone https://github.com/tmux-plugins/tpm .tmux/plugins/tpm
 fi
 
-cp $ZTV_ROOT/llseek.zsh-theme ./.oh-my-zsh/themes/
+cp "$ZTV_ROOT"/llseek.zsh-theme ./.oh-my-zsh/themes/
 
 echo "Enter your sudo passwd to chsh: "
-chsh -s `which zsh`
+chsh -s "$(command -v zsh)"
 
 for f in .zshrc .tmux.conf .vimrc .ssh .gitignore; do
-  [ -f $f -o -d $f -a ! -L $f ] && mv $f $f.old
-  ln -svf $ZTV_ROOT/$f
+  [ -f $f ] || [ -d $f ] && [ ! -L $f ] && mv $f $f.old
+  ln -svf "$ZTV_ROOT/$f" .
 done
 
 vim +PlugInstall +qall
@@ -54,7 +56,7 @@ echo '    StrictHostKeyChecking no' | sudo tee -a /etc/ssh/ssh_config
 echo '    UserKnownHostsFile /dev/null' | sudo tee -a /etc/ssh/ssh_config
 
 mkdir -p $FONTS_DIR
-cp $ZTV_ROOT/fonts/* $FONTS_DIR
+cp "$ZTV_ROOT"/fonts/* $FONTS_DIR
 fc-cache -f
 
 # NOTE: need to toolkit.legacyUserProfileCustomizations.stylesheets to true in about:config
@@ -62,7 +64,7 @@ fc-cache -f
 if [ -d "$FIREFOX_PROFILE" ]; then
   d=$(ls -d "$FIREFOX_PROFILE"/*default*)
   mkdir -p "$d"/chrome
-  cp $ZTV_ROOT/firefox/userChrome.css "$d"/chrome
+  cp "$ZTV_ROOT"/firefox/userChrome.css "$d"/chrome
   echo "Firefox's userChrome.css: $d/chrome/userChrome.css"
 fi
 
