@@ -44,8 +44,8 @@ echo "Enter your sudo passwd to chsh: "
 chsh -s `which zsh`
 
 for f in .zshrc .tmux.conf .vimrc .ssh .gitignore; do
-  [ -f $f -o -d $f ] && mv $f $f.old
-  ln -s $ZTV_ROOT/$f
+  [ -f $f -o -d $f -a ! -L $f ] && mv $f $f.old
+  ln -svf $ZTV_ROOT/$f
 done
 
 vim +PlugInstall +qall
