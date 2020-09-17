@@ -35,6 +35,10 @@ if [ ! -d .oh-my-zsh ]; then
 	git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh || exit
 fi
 
+if [ ! -d .oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
+  git clone https://github.com/zsh-users/zsh-autosuggestions .oh-my-zsh/custom/plugins/zsh-autosuggestions || exit
+fi
+
 if [ ! -d .tmux/plugins/tpm ]; then
   mkdir -p .tmux/plugins
   git clone https://github.com/tmux-plugins/tpm .tmux/plugins/tpm
