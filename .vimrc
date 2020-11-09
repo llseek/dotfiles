@@ -51,6 +51,8 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
+Plug 'ycm-core/YouCompleteMe'
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
 " iOS development specific
 "Plug 'Rip-Rip/clang_complete'
@@ -258,3 +260,8 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 let g:fzf_layout = { 'down': '~20%' }
+
+" === YCM Options ===
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_global_ycm_extra_conf = '~/dotfiles/.ycm_extra_conf.py' " copied from ~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py
+let g:ycm_auto_hover = ""
