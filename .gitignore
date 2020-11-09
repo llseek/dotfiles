@@ -6,3 +6,4 @@ build
 .ssh/known_hosts
 .ssh/authorized_keys
 .vscode
+.ycm_extra_conf.py
