@@ -30,7 +30,10 @@ $PKG_INSTALL git                \
              ctags              \
              global             \
              curl               \
-             ack
+             ack                \
+             cmake              \
+             python3-dev        \
+             clang
 
 if [ ! -d .oh-my-zsh ]; then
 	git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh || exit
@@ -56,6 +59,11 @@ for f in .zshrc .tmux.conf .vimrc .ssh .gitignore; do
 done
 
 vim +PlugInstall +qall
+
+# install ycm
+pushd .vim/plugged/YouCompleteMe
+./install.py --clangd-completer
+popd
 
 echo '    StrictHostKeyChecking no' | sudo tee -a /etc/ssh/ssh_config
 echo '    UserKnownHostsFile /dev/null' | sudo tee -a /etc/ssh/ssh_config
