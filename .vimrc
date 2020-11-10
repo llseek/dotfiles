@@ -264,7 +264,6 @@ let g:fzf_layout = { 'down': '~20%' }
 " === YCM Options ===
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/.ycm_extra_conf.py' " copied from ~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py
-let g:ycm_auto_hover = ""
 
 " === TermDebug Options ===
 packadd termdebug
