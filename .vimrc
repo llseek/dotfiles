@@ -47,7 +47,6 @@ Plug 'honza/vim-snippets'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
-Plug 'flazz/vim-colorschemes'
 Plug 'lifepillar/vim-solarized8'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'skywind3000/asyncrun.vim'
@@ -55,13 +54,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-
-" iOS development specific
-"Plug 'Rip-Rip/clang_complete'
-"Plug 'guns/ultisnips'
-"Plug 'terhechte/syntastic'
-"Plug 'b4winckler/vim-objc'
-"Plug 'eraserhd/vim-ios.git'
 call plug#end()
 
 " === General Options ===
@@ -161,38 +153,6 @@ function! AdjustWindowHeight(minheight, maxheight)
   exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
 
-" === Clang Complete Options ===
-" Disable auto completion, always <C-X> <C-O> to complete
-"let g:clang_complete_auto=1
-"let g:clang_use_library=1
-"let g:clang_periodic_quickfix=0
-"let g:clang_close_preview=1
-" For Objective-C, this needs to be active, otherwise multi-parameter
-" methods won't be completed correctly
-"let g:clang_snippets=1
-" Snipmate does not work anymore, ultisnips is the recommended plugin
-"let g:clang_snippets_engine='ultisnips'
-" This might change depending on your installation
-"let g:clang_exec='/usr/bin/clang'
-"let g:clang_library_path="/usr/local/Cellar/llvm/HEAD/lib/libclang.dylib"
-"let g:clang_library_path="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/"
-
-" === Syntastic Options ===
-" Show sidebar signs.
-"let g:syntastic_enable_signs=1
-" Read the clang complete file
-"let g:syntastic_objc_config_file = '.clang_complete'
-" Status line configuration
-"set statusline+=%#warningmsg#  " Add Error ruler.
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"nnoremap <silent> ` :Errors<CR>
-" Tell it to use clang instead of gcc
-"let g:syntastic_objc_checker = 'clang'
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_signs = 0
-
 " === AutoCmd Options ===
 if has("autocmd")
     filetype plugin indent on
@@ -243,18 +203,6 @@ nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 let g:tmux_navigator_save_on_switch = 1
-
-" === Gutentags Options ===
-let g:gutentags_enabled = 0
-let g:gutentags_project_root = ['.git', '.svn', '.hg']
-let g:gutentags_modules = []
-if executable('ctags')
-	let g:gutentags_modules += ['ctags']
-endif
-if executable('gtags-cscope') && executable('gtags')
-	let g:gutentags_modules += ['gtags_cscope']
-endif
-au FileType gitcommit,gitrebase let g:gutentags_enabled=0
 
 " === AsyncRun Options ===
 let g:asyncrun_open = 6
