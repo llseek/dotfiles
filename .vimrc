@@ -80,8 +80,6 @@ set laststatus=2
 colorscheme default
 hi Search cterm=underline ctermfg=yellow ctermbg=none
 hi Visual cterm=underline ctermfg=yellow ctermbg=none
-hi Pmenu cterm=none ctermfg=yellow ctermbg=darkblue
-hi PmenuSel cterm=none ctermfg=darkblue ctermbg=yellow
 
 " == Record/Replay Options ===
 :nnoremap <space> @q
