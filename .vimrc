@@ -75,12 +75,19 @@ set number
 set ruler
 set hlsearch
 set incsearch
-set t_Co=256
 set laststatus=2
 "set colorcolumn=81
-colorscheme default
-hi Search cterm=underline ctermfg=yellow ctermbg=none
-hi Visual cterm=underline ctermfg=yellow ctermbg=none
+
+" recommended by solarized8
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+if exists('+termguicolors')
+  set termguicolors
+else
+  set t_Co=256
+endif
+set background=light
+colorscheme solarized8
 
 " == Record/Replay Options ===
 :nnoremap <space> @q
