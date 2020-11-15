@@ -112,7 +112,7 @@ export CVS_RSH=ssh
 export CVSEDITOR=vim
 
 # proxy
-if pgrep v2ray; then
+if pgrep v2ray > /dev/null; then
   export http_proxy="http://127.0.0.1:8080"
   export https_proxy="http://127.0.0.1:8080"
 fi
