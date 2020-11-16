@@ -226,4 +226,13 @@ map <C-]> :YcmCompleter GoTo<CR>
 " === TermDebug Options ===
 packadd termdebug
 let g:termdebug_wide = 1
-tnoremap <C-w>N <C-w>N:set nonu<cr>
+tnoremap <silent> <C-a>[ <C-w>N:set nonu<cr>
+nnoremap <silent> <C-a>r :Run<CR>
+nnoremap <C-a>a :Arguments
+nnoremap <silent> <C-a>b :Break<CR>
+nnoremap <silent> <C-a>d :Clear<CR>
+nnoremap <silent> <C-a>s :Step<CR>
+nnoremap <silent> <C-a>n :Over<CR>
+nnoremap <silent> <C-a>f :Finish<CR>
+nnoremap <silent> <C-a>c :Continue<CR>
+nnoremap <silent> <C-a>p :Eval<CR>
