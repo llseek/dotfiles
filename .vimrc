@@ -140,7 +140,7 @@ let g:tagbar_sort=0
 map <F7> :NERDTreeToggle<CR>
 
 " === Airline Options ===
-let g:airline_theme='papercolor'
+let g:airline_theme='solarized'
 let g:airline#extensions#whitespace#mixed_indent_algo=1
 
 " === Mouse Options ===
