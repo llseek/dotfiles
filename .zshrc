@@ -91,6 +91,7 @@ alias gfpk='git format-patch -k'
 alias glog='git log --oneline'
 alias vi='vim'
 alias l='ls'
+alias sudo='sudo '
 
 bindkey -v
 bindkey	'^R' history-incremental-search-backward
