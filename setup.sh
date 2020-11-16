@@ -65,6 +65,15 @@ pushd .vim/plugged/YouCompleteMe
 ./install.py --clangd-completer
 popd
 
+# install cc
+pushd .vim/plugged/color_coded
+mkdir -p build
+cd build
+cmake -DDOWNLOAD_CLANG=0 ..
+make -j16
+make install
+popd
+
 echo '    StrictHostKeyChecking no' | sudo tee -a /etc/ssh/ssh_config
 echo '    UserKnownHostsFile /dev/null' | sudo tee -a /etc/ssh/ssh_config
 
