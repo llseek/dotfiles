@@ -237,3 +237,13 @@ nnoremap <silent> <C-a>n :Over<CR>
 nnoremap <silent> <C-a>f :Finish<CR>
 nnoremap <silent> <C-a>c :Continue<CR>
 nnoremap <silent> <C-a>p :Eval<CR>
+
+" === Color Coded Options ===
+hi link Member Normal
+hi link Variable Normal
+hi Namespace guifg=red
+hi link EnumConstant Constant
+hi link StructDecl Type
+hi link UnionDecl Type
+hi link ClassDecl Type
+hi link EnumDecl Type
