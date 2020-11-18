@@ -36,7 +36,8 @@
             "address": "spinlock.xyz",
             "users": [
               {
-                "id": "116e07b5-0da8-4551-ac1f-b1fa24a076db"
+                "id": "116e07b5-0da8-4551-ac1f-b1fa24a076db",
+                "alterId": 64
               }
             ],
             "port": 443
