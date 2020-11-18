@@ -31,9 +31,7 @@ $PKG_INSTALL git                \
              global             \
              curl               \
              ack                \
-             cmake              \
-             python3-dev        \
-             clang
+             cmake
 
 if [ ! -d .oh-my-zsh ]; then
 	git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh || exit
@@ -59,6 +57,10 @@ for f in .zshrc .tmux.conf .vimrc .ssh .gitignore; do
 done
 
 vim +PlugInstall +qall
+
+if [ "$(uname -s)" != 'Darwin' ]; then
+  $PKG_INSTALL zlib1g-dev python3-dev libclang-dev llvm-dev
+fi
 
 # install ycm
 pushd .vim/plugged/YouCompleteMe
