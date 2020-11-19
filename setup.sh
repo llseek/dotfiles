@@ -35,7 +35,8 @@ $PKG_INSTALL git                \
              ack                \
              cmake              \
              fontconfig         \
-             lsof
+             lsof               \
+             bear
 
 if [ ! -d .oh-my-zsh ]; then
 	git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh || exit
