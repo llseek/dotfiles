@@ -219,9 +219,7 @@ let g:fzf_action = {
 let g:fzf_layout = { 'down': '~20%' }
 
 " === YCM Options ===
-" copied from ~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py
-" or generated with :YcmGenerateConfig
-let g:ycm_global_ycm_extra_conf = '.'
+let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 map <C-]> :YcmCompleter GoTo<CR>
 
