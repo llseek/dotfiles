@@ -5,10 +5,12 @@ set -eu
 ZTV_ROOT=$PWD
 
 if [ "$(uname -s)" == 'Darwin' ]; then
+  brew upgrade
   PKG_INSTALL='brew install'
   FIREFOX_PROFILE='Library/Application\ Support/Firefox/Profiles'
   FONTS_DIR='Library/Fonts'
 else
+  sudo apt -y update
   PKG_INSTALL='sudo apt -y install'
   FIREFOX_PROFILE='.mozilla/firefox'
   FONTS_DIR='.fonts'
