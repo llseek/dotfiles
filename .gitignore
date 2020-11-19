@@ -7,3 +7,4 @@ build
 .ssh/authorized_keys
 .vscode
 .ycm_extra_conf.py
+.color_coded
