@@ -76,7 +76,11 @@ popd
 pushd .vim/plugged/color_coded
 mkdir -p build
 cd build
-cmake -DDOWNLOAD_CLANG=0 ..
+if [ "$(uname -s)" != 'Darwin' ]; then
+  cmake -DDOWNLOAD_CLANG=0 ..
+else
+  cmake ..
+fi
 make -j16
 make install
 popd
