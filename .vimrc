@@ -221,6 +221,13 @@ let g:fzf_layout = { 'down': '~20%' }
 " === YCM Options ===
 let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_language_server =
+  \ [{
+  \   'name': 'ccls',
+  \   'cmdline': [ 'ccls'  ],
+  \   'filetypes': [ 'c', 'cpp', 'cuda', 'objc', 'objcpp'  ],
+  \   'project_root_files': [ '.ccls-root', 'compile_commands.json'  ]
+  \ }]
 map <C-]> :YcmCompleter GoTo<CR>
 
 " === TermDebug Options ===
