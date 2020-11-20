@@ -51,7 +51,7 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
-Plug 'ycm-core/YouCompleteMe'
+Plug 'llseek/YouCompleteMe', { 'branch': 'prio-c++17' }
 Plug 'jeaye/color_coded'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 call plug#end()
