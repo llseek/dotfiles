@@ -69,7 +69,7 @@ fi
 
 # install ycm
 pushd .vim/plugged/YouCompleteMe
-./install.py --clangd-completer
+./install.py
 popd
 
 # install cc
