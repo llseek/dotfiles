@@ -117,7 +117,7 @@ set splitright
 " === Gtags Options ===
 map <C-n> :cn<CR>
 map <C-p> :cp<CR>
-map <C-\> :GtagsCursor<CR>
+"map <C-\> :GtagsCursor<CR>
 
 " === Taglist Options ===
 map <F9> :TlistToggle<CR>
@@ -229,6 +229,7 @@ let g:ycm_language_server =
   \   'project_root_files': [ '.ccls-root', 'compile_commands.json'  ]
   \ }]
 map <C-]> :YcmCompleter GoTo<CR>
+map <C-\> :YcmCompleter GoToReferences<CR>
 
 " === TermDebug Options ===
 packadd termdebug
