@@ -150,6 +150,7 @@ let NERDTreeShowHidden=1
 " === Airline Options ===
 let g:airline_theme='solarized'
 let g:airline#extensions#whitespace#mixed_indent_algo=1
+let g:airline#extensions#tabline#enabled = 1
 
 " === Mouse Options ===
 set mouse=r
