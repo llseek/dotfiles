@@ -57,7 +57,7 @@ Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 call plug#end()
 
 " === General Options ===
-"let mapleader=" "
+let mapleader=' '
 syntax on
 set exrc secure
 set encoding=utf-8
