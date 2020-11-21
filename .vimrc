@@ -88,6 +88,15 @@ endif
 set background=dark
 colorscheme solarized8
 
+" Clipboard
+if has('clipboard')
+    if has('unnamedplus') " On Linux, use + register
+        set clipboard=unnamed,unnamedplus
+    else        " On Mac and Windows, use * register
+        set clipboard=unnamed
+    endif
+endif
+
 " === Tab/Space Options ===
 set tabstop=8
 set shiftwidth=8
