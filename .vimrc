@@ -63,6 +63,7 @@ syntax on
 inoremap jj <ESC>:w<CR>
 
 set exrc secure
+set mouse=a
 set encoding=utf-8
 set fileencodings=utf-8
 set autoindent
@@ -126,9 +127,6 @@ let NERDTreeShowHidden=1
 let g:airline_theme='solarized'
 let g:airline#extensions#whitespace#mixed_indent_algo=1
 let g:airline#extensions#tabline#enabled = 1
-
-" === Mouse Options ===
-set mouse=r
 
 " === Quickfix Options ===
 "nnoremap <C-q> :cclose<CR> - use togglelist.vim ?
