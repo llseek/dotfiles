@@ -1,10 +1,10 @@
-" === Text Objects ===
+" Memo
 " diw - delete the word that cursor is on
 " ciw - edit the word that cursor is on
 " ci( - edit the content inside ()
 " vip - select the paragraph
 
-" === Vim-plug Options ===
+" Plug
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -57,7 +57,7 @@ Plug 'jeaye/color_coded'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 call plug#end()
 
-" === General Options ===
+" General
 let mapleader=' '
 syntax on
 inoremap jj <ESC>:w<CR>
@@ -77,7 +77,7 @@ set backspace=indent,eol,start
 set fillchars+=vert:│
 set updatetime=1000
 
-" recommended by solarized8
+" Colorscheme
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 if exists('+termguicolors')
@@ -97,13 +97,13 @@ if has('clipboard')
     endif
 endif
 
-" === Tab/Space Options ===
+" Tab
 set tabstop=8
 set shiftwidth=8
 set softtabstop=8
 "set expandtab
 
-" === Split Options ===
+" Split
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
@@ -115,12 +115,12 @@ tnoremap <C-h> <C-w>h
 set splitbelow
 set splitright
 
-" === Gtags Options ===
+" Gtags
 map <C-n> :cn<CR>
 map <C-p> :cp<CR>
 "map <C-\> :GtagsCursor<CR>
 
-" === Tagbar Options ===
+" Tagbar
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_left=1
 let g:tagbar_width=30
@@ -128,23 +128,23 @@ let g:tagbar_autoclose=0
 let g:tagbar_sort=0
 "au VimEnter * nested :call tagbar#autoopen(1)
 
-" === Nerdtree Options ===
+" Nerdtree
 au VimEnter * NERDTree  | wincmd w
 let NERDTreeShowHidden=1
 
-" === Airline Options ===
+" Airline
 let g:airline_theme='solarized'
 let g:airline#extensions#whitespace#mixed_indent_algo=1
 let g:airline#extensions#tabline#enabled = 1
 
-" === Quickfix Options ===
+" Quickfix
 "nnoremap <C-q> :cclose<CR> - use togglelist.vim ?
 au FileType qf call AdjustWindowHeight(7, 12)
 function! AdjustWindowHeight(minheight, maxheight)
   exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
 
-" === AutoCmd Options ===
+" Autocmd
 if has("autocmd")
     filetype plugin indent on
 endif
@@ -167,7 +167,7 @@ if has("autocmd")
     au BufRead,BufNewFile *.jelly set syntax=html
 endif
 
-" === Vim Tmux Navigator Options ===
+" Tmux navigator
 let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
@@ -175,15 +175,15 @@ nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 let g:tmux_navigator_save_on_switch = 1
 
-" === Fugitive Options ===
+" Fugitive
 nnoremap <Leader>s :GitGutterStageHunk<CR>
 nnoremap <Leader>u :GitGutterUndoHunk<CR>
 
-" === AsyncRun Options ===
+" AsyncRun
 let g:asyncrun_open = 6
 let g:asyncrun_bell = 1
 
-" === FZF Options ===
+" Fzf
 map <C-f> :Files<CR>
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 let g:fzf_action = {
@@ -192,7 +192,7 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 let g:fzf_layout = { 'window': 'enew' }
 
-" === YCM Options ===
+" YCM
 let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_language_server =
@@ -205,7 +205,7 @@ let g:ycm_language_server =
 map <C-]> :YcmCompleter GoTo<CR>
 map <C-\> :YcmCompleter GoToReferences<CR>
 
-" === TermDebug Options ===
+" Termdebug
 packadd termdebug
 let g:termdebug_wide = 1
 tnoremap <silent> <C-a>[ <C-w>N:set nonu<cr>
@@ -219,7 +219,7 @@ nnoremap <silent> <C-a>f :Finish<CR>
 nnoremap <silent> <C-a>c :Continue<CR>
 nnoremap <silent> <C-a>p :Eval<CR>
 
-" === Color Coded Options ===
+" Color_coded
 hi link Member Normal
 hi link Variable Normal
 hi Namespace guifg=red
