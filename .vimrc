@@ -73,6 +73,7 @@ set incsearch
 set laststatus=2
 set backspace=indent,eol,start
 set fillchars+=vert:│
+set updatetime=1000
 "set colorcolumn=81
 
 " recommended by solarized8
