@@ -12,7 +12,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 call plug#begin('~/.vim/plugged')
 Plug 'vim-scripts/a.vim'
-Plug 'vim-scripts/taglist.vim'
 Plug 'vim-scripts/gtags.vim'
 Plug 'vim-scripts/ScrollColors'
 Plug 'vim-scripts/ZoomWin'
@@ -126,16 +125,6 @@ set splitright
 map <C-n> :cn<CR>
 map <C-p> :cp<CR>
 "map <C-\> :GtagsCursor<CR>
-
-" === Taglist Options ===
-map <F9> :TlistToggle<CR>
-let TagList_Show_One_File=1
-let Tlist_Auto_Open=0
-let Tlist_Auto_Update=1
-let Tlist_Exit_OnlyWindow=1
-let Tlist_GainFocus_On_ToggleOpen=1
-let Tlist_File_Fold_Auto_Close=1
-let Tlist_Enable_Fold_Colum=1
 
 " === Tagbar Options ===
 nmap <F8> :TagbarToggle<CR>
