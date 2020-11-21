@@ -35,6 +35,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-obsession'
 Plug 'mileszs/ack.vim'
 Plug 'junegunn/gv.vim'
+Plug 'mhinz/vim-startify'
 
 " default snippets (under .vim/bundle/vim-snippets/)
 "   contents:
