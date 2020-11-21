@@ -211,12 +211,13 @@ let g:asyncrun_open = 6
 let g:asyncrun_bell = 1
 
 " === FZF Options ===
-map <C-f> :FZF<CR>
+map <C-f> :Files<CR>
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
-let g:fzf_layout = { 'down': '~20%' }
+let g:fzf_layout = { 'window': 'enew' }
 
 " === YCM Options ===
 let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
