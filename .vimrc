@@ -60,6 +60,8 @@ call plug#end()
 " === General Options ===
 let mapleader=' '
 syntax on
+inoremap jj <ESC>:w<CR>
+
 set exrc secure
 set encoding=utf-8
 set fileencodings=utf-8
@@ -73,7 +75,6 @@ set laststatus=2
 set backspace=indent,eol,start
 set fillchars+=vert:│
 set updatetime=1000
-"set colorcolumn=81
 
 " recommended by solarized8
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -86,28 +87,11 @@ endif
 set background=dark
 colorscheme solarized8
 
-" == Record/Replay Options ===
-:nnoremap <space> @q
-
 " === Tab/Space Options ===
 set tabstop=8
 set shiftwidth=8
 set softtabstop=8
 "set expandtab
-
-" === Fold Options ===
-set foldenable
-set foldmethod=syntax
-set foldcolumn=0
-set foldlevel=99
-hi Folded ctermbg=none
-"nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zC' : 'zO')<CR>
-" refer https://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg for color-number mappings
-"if has("autocmd")
-"    au BufWinLeave * mkview
-"    au BufWinEnter * silent loadview
-"    au! BufReadPost,BufWritePost * silent loadview
-"endif
 
 " === Split Options ===
 nnoremap <C-j> <C-w>j
@@ -145,7 +129,6 @@ let g:airline#extensions#tabline#enabled = 1
 
 " === Mouse Options ===
 set mouse=r
-set mousehide
 
 " === Quickfix Options ===
 "nnoremap <C-q> :cclose<CR> - use togglelist.vim ?
@@ -176,26 +159,6 @@ if has("autocmd")
     au FileType pov set syntax=make
     au BufRead,BufNewFile *.jelly set syntax=html
 endif
-
-"if has("autocmd")
-    " delete trailing whitespaces
-"    autocmd BufWritePre *.[c|h] :%s/\s\+$//e
-"endif
-
-" === Misc Options ===
-" Open files in the same directory as the current file
-map ,e :e <C-R>=expand("%:h") . "/" <CR>
-map ,t :tabe <C-R>=expand("%:h") . "/" <CR>
-map ,s :split <C-R>=expand("%:h") . "/" <CR>
-map ,v :vsplit <C-R>=expand("%:h") . "/" <CR>
-" map Escape key to jj
-inoremap jj <ESC>:w<CR>
-
-" === Leader Options ===
-"nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) - 5)<CR>
-"nnoremap <silent> <Leader>= :exe "resize " . (winheight(0) + 5)<CR>
-"nnoremap <silent> <Leader>9 :exe "vertical resize " . (winwidth(0) - 5)<CR>
-"nnoremap <silent> <Leader>0 :exe "vertical resize " . (winwidth(0) + 5)<CR>
 
 " === Vim Tmux Navigator Options ===
 let g:tmux_navigator_no_mappings = 1
