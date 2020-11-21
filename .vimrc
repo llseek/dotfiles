@@ -18,7 +18,7 @@ Plug 'vim-scripts/ScrollColors'
 Plug 'vim-scripts/ZoomWin'
 Plug 'vim-scripts/DrawIt'
 Plug 'godlygeek/tabular'
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'christoomey/vim-tmux-navigator'
@@ -143,7 +143,8 @@ let g:tagbar_sort=0
 "au VimEnter * nested :call tagbar#autoopen(1)
 
 " === Nerdtree Options ===
-map <F7> :NERDTreeToggle<CR>
+au VimEnter * NERDTree  | wincmd w
+let NERDTreeShowHidden=1
 
 " === Airline Options ===
 let g:airline_theme='solarized'
