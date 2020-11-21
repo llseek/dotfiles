@@ -8,5 +8,6 @@ build
 .vscode
 .ycm_extra_conf.py
 .color_coded
+.ccls
 .ccls-cache
 compile_commands.json
