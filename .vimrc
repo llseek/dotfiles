@@ -127,9 +127,12 @@ let g:tagbar_sort=0
 "au VimEnter * nested :call tagbar#autoopen(1)
 
 " Nerdtree
-if exists(":NERDTree")
-  au VimEnter * NERDTree  | wincmd w
-endif
+function! OpenNERDTree()
+  if exists(':NERDTree')
+    NERDTree | wincmd w
+  endif
+endfunction
+au VimEnter * :call OpenNERDTree()
 let NERDTreeShowHidden=1
 
 " Airline
