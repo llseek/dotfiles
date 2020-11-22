@@ -45,11 +45,13 @@ ZSH_THEME="llseek"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+ZSH_TMUX_AUTOSTART="true"
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-flow zsh-autosuggestions)
+plugins=(git git-flow tmux zsh-autosuggestions)
 
 # User configuration
 
@@ -126,7 +128,6 @@ export LANG=en_US.UTF-8
 
 pgrep Xorg > /dev/null && DISPLAY=:0 setxkbmap -option caps:ctrl_modifier
 
-alias ta='tmux attach'
 alias glog='git log --pretty=format:"%Cred%h %Cgreen%aN%Cblue%d %Creset%s"'
 alias d='dmesg | less +G'
 alias dl='aria2c -s 16 -x 16'
