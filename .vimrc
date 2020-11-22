@@ -53,7 +53,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
 Plug 'llseek/YouCompleteMe', { 'branch': 'prio-c++17' }
 Plug 'jeaye/color_coded'
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 call plug#end()
 
 " General
