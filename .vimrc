@@ -53,6 +53,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
 Plug 'llseek/YouCompleteMe', { 'branch': 'prio-c++17' }
 Plug 'jeaye/color_coded'
+Plug 'voldikss/vim-floaterm'
 call plug#end()
 
 " General
@@ -231,3 +232,7 @@ hi link StructDecl Type
 hi link UnionDecl Type
 hi link ClassDecl Type
 hi link EnumDecl Type
+
+" Floaterm
+let g:floaterm_keymap_new = '<Leader>t'
+let g:floaterm_autoclose=1
