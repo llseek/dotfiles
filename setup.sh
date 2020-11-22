@@ -29,7 +29,6 @@ $PKG_INSTALL git                \
              zsh                \
              tmux               \
              vim                \
-             ctags              \
              global             \
              curl               \
              ack                \
