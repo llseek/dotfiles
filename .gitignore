@@ -3,10 +3,10 @@ GRTAGS
 GTAGS
 tags
 build
-.ssh/known_hosts
-.ssh/authorized_keys
-.id_rsa
-.id_rsa.pub
+known_hosts
+authorized_keys
+id_rsa
+id_rsa.pub
 .vscode
 .ycm_extra_conf.py
 .color_coded
