@@ -234,5 +234,5 @@ hi link ClassDecl Type
 hi link EnumDecl Type
 
 " Floaterm
-let g:floaterm_keymap_new = '<Leader>t'
+let g:floaterm_keymap_toggle = '<C-t>'
 let g:floaterm_autoclose=1
