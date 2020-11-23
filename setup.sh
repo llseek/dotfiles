@@ -63,7 +63,7 @@ done
 vim +PlugInstall +qall
 
 if [ "$(uname -s)" != 'Darwin' ]; then
-  $PKG_INSTALL zlib1g-dev python3-dev clang libclang-dev llvm-dev ccls
+  $PKG_INSTALL zlib1g-dev python3-dev clang libclang-dev llvm-dev
 fi
 
 # install ycm
