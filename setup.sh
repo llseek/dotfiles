@@ -60,7 +60,7 @@ for f in .zshrc .tmux.conf .vimrc .ssh .gitignore; do
   ln -svf "$ZTV_ROOT/$f" .
 done
 
-vim +PlugInstall +qall
+vim --noplugin +PlugInstall +qall
 
 if [ "$(uname -s)" != 'Darwin' ]; then
   $PKG_INSTALL zlib1g-dev python3-dev clang libclang-dev llvm-dev
