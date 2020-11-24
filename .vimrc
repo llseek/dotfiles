@@ -189,7 +189,7 @@ let g:asyncrun_bell = 1
 
 " Fzf
 map <C-f> :Files<CR>
-let $FZF_DEFAULT_COMMAND = 'ack --ignore-file=is:.git -g ""'
+let $FZF_DEFAULT_COMMAND = 'ack -g ""'
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
