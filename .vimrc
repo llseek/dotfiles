@@ -206,7 +206,8 @@ let g:ycm_language_server =
   \   'filetypes': [ 'c', 'cpp', 'cuda', 'objc', 'objcpp'  ],
   \   'project_root_files': [ '.ccls-root', 'compile_commands.json'  ]
   \ }]
-map <C-]> :YcmCompleter GoTo<CR>
+let g:ycm_auto_hover = ''
+nmap <leader>d <plug>(YCMHover)
 map <C-\> :YcmCompleter GoToReferences<CR>
 
 " Termdebug
