@@ -55,7 +55,7 @@ cp "$ZTV_ROOT"/llseek.zsh-theme ./.oh-my-zsh/themes/
 echo "Enter your sudo passwd to chsh: "
 chsh -s "$(command -v zsh)"
 
-for f in .zshrc .tmux.conf .vimrc .ssh .gitignore; do
+for f in .zshrc .tmux.conf .vimrc .ackrc .ssh .gitignore; do
   [ -f $f ] || [ -d $f ] && [ ! -L $f ] && mv $f $f.old
   ln -svf "$ZTV_ROOT/$f" .
 done
