@@ -134,6 +134,31 @@ function! OpenNERDTree()
   endif
 endfunction
 au VimEnter * :call OpenNERDTree()
+
+" returns true iff is NERDTree open/active
+function! IsNTOpen()
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+" returns true iff focused window is NERDTree window
+function! IsNTFocused()
+  return -1 != match(expand('%'), 'NERD_Tree')
+endfunction
+
+" returns true iff focused window contains a file in current pwd
+function! IsInsideCwd()
+  return -1 != stridx(expand('%:p'), getcwd())
+endfunction
+
+" calls NERDTreeFind iff NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
+function! SyncTree()
+  if &modifiable && IsNTOpen() && !IsNTFocused() && strlen(expand('%')) > 0 && !&diff && IsInsideCwd()
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
+
+autocmd BufEnter * call SyncTree()
 let NERDTreeShowHidden=1
 
 " Airline
