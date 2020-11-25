@@ -63,7 +63,15 @@ done
 vim --noplugin +PlugInstall +qall
 
 if [ "$(uname -s)" != 'Darwin' ]; then
-  $PKG_INSTALL zlib1g-dev python3-dev clang libclang-dev llvm-dev liblua5.2-dev libncurses5-dev
+  $PKG_INSTALL zlib1g-dev python3-dev clang-9 libclang-9-dev llvm-9-dev liblua5.2-dev libncurses5-dev rapidjson-dev ninja-build
+  git clone https://github.com/MaskRay/ccls /tmp/ccls
+  pushd /tmp/ccls
+  cmake -H. -GNinja -BRelease -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/usr/lib/llvm-9 -DLLVM_INCLUDE_DIR=/usr/lib/llvm-9/include
+  cmake --build Release
+  cd Release
+  sudo ninja install
+  rm -rf /tmp/ccls
+  popd
 fi
 
 # install ycm
