@@ -63,7 +63,7 @@ done
 vim --noplugin +PlugInstall +qall
 
 if [ "$(uname -s)" != 'Darwin' ]; then
-  $PKG_INSTALL zlib1g-dev python3-dev clang libclang-dev llvm-dev liblua5.2-dev
+  $PKG_INSTALL zlib1g-dev python3-dev clang libclang-dev llvm-dev liblua5.2-dev libncurses5-dev
 fi
 
 # install ycm
