@@ -1,2 +1,3 @@
 --ignore-dir=.git
 --ignore-dir=.ccls-cache
+--ignore-dir=build
