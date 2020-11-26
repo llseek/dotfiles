@@ -124,13 +124,6 @@ let g:tagbar_right=1
 let g:tagbar_autoclose=0
 
 " Nerdtree
-function! OpenNERDTree()
-  if exists(':NERDTree')
-    NERDTree | wincmd w
-  endif
-endfunction
-au VimEnter * :call OpenNERDTree()
-
 " returns true iff is NERDTree open/active
 function! IsNTOpen()
   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
@@ -170,6 +163,16 @@ function! AdjustWindowHeight(minheight, maxheight)
 endfunction
 
 " Autocmd
+function! OpenNERDTreeAndTagbar()
+  if exists(':NERDTree')
+    NERDTree | wincmd w
+  endif
+  if exists(':Tagbar')
+    Tagbar
+  endif
+endfunction
+au VimEnter * :call OpenNERDTreeAndTagbar()
+
 if has("autocmd")
     filetype plugin indent on
 endif
