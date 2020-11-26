@@ -233,7 +233,7 @@ let g:ycm_language_server =
   \ }]
 let g:ycm_auto_hover = ''
 nmap <leader>d <plug>(YCMHover)
-map <C-]> :YcmCompleter GoTo<CR> \| :execute "normal! zt"<CR>
+map <C-]> :YcmCompleter GoTo<CR>
 map <C-\> :YcmCompleter GoToReferences<CR>
 
 " Termdebug
