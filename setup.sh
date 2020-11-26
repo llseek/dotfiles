@@ -16,7 +16,7 @@ else
   FONTS_DIR='.fonts'
 fi
 
-git config user.email "yxj@gmail.com"
+git config user.email "yxj0207@gmail.com"
 git config user.name "Xiaojie Yuan"
 git config core.editor vim
 git config push.default simple
