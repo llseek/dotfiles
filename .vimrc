@@ -120,12 +120,8 @@ map <C-p> :cp<CR>
 "map <C-\> :GtagsCursor<CR>
 
 " Tagbar
-nmap <F8> :TagbarToggle<CR>
-let g:tagbar_left=1
-let g:tagbar_width=30
+let g:tagbar_right=1
 let g:tagbar_autoclose=0
-let g:tagbar_sort=0
-"au VimEnter * nested :call tagbar#autoopen(1)
 
 " Nerdtree
 function! OpenNERDTree()
