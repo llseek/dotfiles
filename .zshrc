@@ -126,7 +126,8 @@ export LANG=en_US.UTF-8
 # source personal configs
 [[ -f ~/..zshrc ]] && source ~/..zshrc
 
-pgrep Xorg > /dev/null && DISPLAY=:0 setxkbmap -option caps:ctrl_modifier
+export DISPLAY=:0
+pgrep Xorg > /dev/null && setxkbmap -option caps:ctrl_modifier
 
 alias glog='git log --pretty=format:"%Cred%h %Cgreen%aN%Cblue%d %Creset%s"'
 alias d='dmesg | less +G'
