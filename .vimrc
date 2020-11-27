@@ -120,7 +120,7 @@ map <C-p> :cp<CR>
 "map <C-\> :GtagsCursor<CR>
 
 " Tagbar
-let g:tagbar_right=1
+let g:tagbar_position='right'
 let g:tagbar_autoclose=0
 
 " Nerdtree
