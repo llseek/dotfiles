@@ -237,7 +237,7 @@ let g:ycm_auto_hover = ''
 nmap <leader>d <plug>(YCMHover)
 map <C-]> :YcmCompleter GoTo<CR>
 map <C-\> :YcmCompleter GoToReferences<CR>
-map <C-i> :YcmCompleter GoToImplementation<CR>
+map <C-m> :YcmCompleter GoToImplementation<CR>
 map <C-s> :YcmCompleter GoToSymbol 
 
 " Termdebug
