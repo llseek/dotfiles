@@ -149,6 +149,7 @@ endfunction
 
 autocmd BufEnter * call SyncTree()
 let NERDTreeShowHidden=1
+let NERDTreeIgnore = ['\.swp$']
 
 " Airline
 let g:airline_theme='solarized'
