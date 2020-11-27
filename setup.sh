@@ -28,7 +28,7 @@ cd "$HOME"
 $PKG_INSTALL git                \
              zsh                \
              tmux               \
-             vim-nox             \
+             vim                \
              global             \
              curl               \
              ack                \
