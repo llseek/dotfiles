@@ -214,6 +214,7 @@ let g:asyncrun_bell = 1
 
 " Fzf
 map <C-f> :Files<CR>
+map <C-g> :Rg<CR>
 let $FZF_DEFAULT_COMMAND = 'ack -g ""'
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
