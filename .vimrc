@@ -60,6 +60,7 @@ call plug#end()
 let mapleader=' '
 syntax on
 inoremap jj <ESC>:w<CR>
+noremap <Leader>r :source ~/.vimrc<CR>
 
 set exrc secure
 set mouse=a
