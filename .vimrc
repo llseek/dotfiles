@@ -194,8 +194,8 @@ nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 let g:tmux_navigator_save_on_switch = 1
 
 " Fugitive
-nnoremap <Leader>s :GitGutterStageHunk<CR>
-nnoremap <Leader>u :GitGutterUndoHunk<CR>
+nnoremap ga :GitGutterStageHunk<CR>
+nnoremap gu :GitGutterUndoHunk<CR>
 
 " AsyncRun
 let g:asyncrun_open = 6
