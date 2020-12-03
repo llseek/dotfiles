@@ -135,6 +135,7 @@ let g:tagbar_autoclose = 0
 let g:tagbar_sort = 0
 let g:tagbar_compact = 1
 let g:tagbar_indent = 1
+au FileType c,cpp nested :TagbarOpen
 
 " Nerdtree
 let NERDTreeShowHidden=1
@@ -165,16 +166,13 @@ endfunction
 
 au BufEnter * call SyncTree()
 
-function! OpenNERDTreeAndTagbar()
+function! OpenNERDTree()
   if exists(':NERDTree')
     NERDTree | wincmd w
   endif
-  if exists(':Tagbar')
-    Tagbar
-  endif
 endfunction
 
-au VimEnter * :call OpenNERDTreeAndTagbar()
+au VimEnter * :call OpenNERDTree()
 
 " Airline
 let g:airline_theme='solarized'
