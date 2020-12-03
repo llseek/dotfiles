@@ -125,6 +125,9 @@ let g:tagbar_position='right'
 let g:tagbar_autoclose=0
 
 " Nerdtree
+let NERDTreeShowHidden=1
+let NERDTreeIgnore = ['\.swp$']
+
 " returns true iff is NERDTree open/active
 function! IsNTOpen()
   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
@@ -148,9 +151,18 @@ function! SyncTree()
   endif
 endfunction
 
-autocmd BufEnter * call SyncTree()
-let NERDTreeShowHidden=1
-let NERDTreeIgnore = ['\.swp$']
+au BufEnter * call SyncTree()
+
+function! OpenNERDTreeAndTagbar()
+  if exists(':NERDTree')
+    NERDTree | wincmd w
+  endif
+  if exists(':Tagbar')
+    Tagbar
+  endif
+endfunction
+
+au VimEnter * :call OpenNERDTreeAndTagbar()
 
 " Airline
 let g:airline_theme='solarized'
@@ -165,16 +177,6 @@ function! AdjustWindowHeight(minheight, maxheight)
 endfunction
 
 " Autocmd
-function! OpenNERDTreeAndTagbar()
-  if exists(':NERDTree')
-    NERDTree | wincmd w
-  endif
-  if exists(':Tagbar')
-    Tagbar
-  endif
-endfunction
-au VimEnter * :call OpenNERDTreeAndTagbar()
-
 if has("autocmd")
     filetype plugin indent on
 endif
