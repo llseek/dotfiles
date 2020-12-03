@@ -2,6 +2,57 @@
 
 set -eu
 
+install_ctags() {
+  if command -v ctags && (ctags --version | grep "Universal Ctags"); then
+    return
+  fi
+  rm -rf /tmp/ctags
+  git clone https://github.com/universal-ctags/ctags.git /tmp/ctags
+  pushd /tmp/ctags
+  ./autogen.sh
+  ./configure --prefix=/usr/local
+  make -j16
+  sudo make install
+  popd
+}
+
+install_ccls() {
+  command -v ccls && return
+  $PKG_INSTALL zlib1g-dev python3-dev clang-9 libclang-9-dev llvm-9-dev liblua5.2-dev libncurses5-dev rapidjson-dev ninja-build
+  git clone https://github.com/MaskRay/ccls /tmp/ccls
+  pushd /tmp/ccls
+  cmake -H. -GNinja -BRelease -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/usr/lib/llvm-9 -DLLVM_INCLUDE_DIR=/usr/lib/llvm-9/include
+  cmake --build Release
+  cd Release
+  sudo ninja install
+  rm -rf /tmp/ccls
+  popd
+}
+
+install_ycm() {
+  [ -f ".vim/plugged/YouCompleteMe/third_party/ycmd/ycm_core.so" ] && return
+  pushd .vim/plugged/YouCompleteMe
+  ./install.py
+  popd
+}
+
+install_cc() {
+  [ -f ".vim/plugged/color_coded/color_coded.so" ] && return
+  sudo ln -sf $(command -v llvm-config-9) /usr/bin/llvm-config
+  pushd .vim/plugged/color_coded
+  rm -rf build
+  mkdir -p build
+  cd build
+  if [ "$(uname -s)" != 'Darwin' ]; then
+    cmake -DDOWNLOAD_CLANG=0 ..
+  else
+    cmake ..
+  fi
+  make -j16
+  make install
+  popd
+}
+
 ZTV_ROOT=$PWD
 
 if [ "$(uname -s)" == 'Darwin' ]; then
@@ -65,53 +116,10 @@ done
 
 vim --noplugin +PlugInstall +qall
 
-# install universal-ctags
-if ! command -v ctags || ! (ctags --version | grep "Universal Ctags"); then
-  rm -rf /tmp/ctags
-  git clone https://github.com/universal-ctags/ctags.git /tmp/ctags
-  pushd /tmp/ctags
-  ./autogen.sh
-  ./configure --prefix=/usr/local
-  make -j16
-  sudo make install
-  popd
-fi
-
-# install ccls
-if ! command -v ccls; then
-  $PKG_INSTALL zlib1g-dev python3-dev clang-9 libclang-9-dev llvm-9-dev liblua5.2-dev libncurses5-dev rapidjson-dev ninja-build
-  git clone https://github.com/MaskRay/ccls /tmp/ccls
-  pushd /tmp/ccls
-  cmake -H. -GNinja -BRelease -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/usr/lib/llvm-9 -DLLVM_INCLUDE_DIR=/usr/lib/llvm-9/include
-  cmake --build Release
-  cd Release
-  sudo ninja install
-  rm -rf /tmp/ccls
-  popd
-fi
-
-# install ycm
-if [ ! -f ".vim/plugged/YouCompleteMe/third_party/ycmd/ycm_core.so" ]; then
-  pushd .vim/plugged/YouCompleteMe
-  ./install.py
-  popd
-fi
-
-# install cc
-if [ ! -f ".vim/plugged/color_coded/color_coded.so" ]; then
-  sudo ln -sf $(command -v llvm-config-9) /usr/bin/llvm-config
-  pushd .vim/plugged/color_coded
-  mkdir -p build
-  cd build
-  if [ "$(uname -s)" != 'Darwin' ]; then
-    cmake -DDOWNLOAD_CLANG=0 ..
-  else
-    cmake ..
-  fi
-  make -j16
-  make install
-  popd
-fi
+install_ctags
+install_ccls
+install_ycm
+install_cc
 
 echo '    StrictHostKeyChecking no' | sudo tee -a /etc/ssh/ssh_config
 echo '    UserKnownHostsFile /dev/null' | sudo tee -a /etc/ssh/ssh_config
