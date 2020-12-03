@@ -175,6 +175,7 @@ function! OpenNERDTree()
 endfunction
 
 au VimEnter * :call OpenNERDTree()
+au BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Airline
 let g:airline_theme='solarized'
