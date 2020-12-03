@@ -48,7 +48,6 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'lifepillar/vim-solarized8'
-Plug 'skywind3000/asyncrun.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
 Plug 'llseek/YouCompleteMe', { 'branch': 'prio-c++17' }
@@ -209,10 +208,6 @@ nnoremap grbi :Git rebase -i<CR>
 " GitGutter
 nnoremap ga :GitGutterStageHunk<CR>
 nnoremap gu :GitGutterUndoHunk<CR>
-
-" AsyncRun
-let g:asyncrun_open = 6
-let g:asyncrun_bell = 1
 
 " Fzf
 map <C-f> :Files<CR>
