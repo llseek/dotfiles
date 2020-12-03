@@ -29,7 +29,6 @@ $PKG_INSTALL git                \
              zsh                \
              tmux               \
              vim                \
-             ctags              \
              global             \
              curl               \
              ack                \
@@ -68,6 +67,17 @@ done
 vim --noplugin +PlugInstall +qall
 
 if [ "$(uname -s)" != 'Darwin' ]; then
+  # install universal-ctags
+  rm -rf /tmp/ctags
+  git clone https://github.com/universal-ctags/ctags.git /tmp/ctags
+  pushd /tmp/ctags
+  ./autogen.sh
+  ./configure --prefix=/usr/local
+  make -j16
+  sudo make install
+  popd
+
+  # install ccls
   $PKG_INSTALL zlib1g-dev python3-dev clang-9 libclang-9-dev llvm-9-dev liblua5.2-dev libncurses5-dev rapidjson-dev ninja-build
   git clone https://github.com/MaskRay/ccls /tmp/ccls
   pushd /tmp/ccls
