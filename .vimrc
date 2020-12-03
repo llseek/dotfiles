@@ -76,6 +76,8 @@ set laststatus=2
 set backspace=indent,eol,start
 set fillchars+=vert:│
 set updatetime=1000
+" :help last-position-jump
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " Colorscheme
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -97,11 +99,19 @@ if has('clipboard')
     endif
 endif
 
-" Tab
-set tabstop=8
-set shiftwidth=8
-set softtabstop=8
-"set expandtab
+" Indentation
+filetype plugin indent on
+au FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
+au FileType groovy setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
+au FileType xml setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+au FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+au FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+au FileType sh setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+au FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+au FileType cpp setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
+"make.inc is detected as pov filetype, set syntax to Makefile
+au FileType pov set syntax=make
+au BufRead,BufNewFile *.jelly set syntax=html
 
 " Split
 nnoremap <C-j> <C-w>j
@@ -175,30 +185,6 @@ au FileType qf call AdjustWindowHeight(7, 12)
 function! AdjustWindowHeight(minheight, maxheight)
   exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
-
-" Autocmd
-if has("autocmd")
-    filetype plugin indent on
-endif
-
-if has("autocmd")
-    " :help last-position-jump
-    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
-
-if has("autocmd")
-    au FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
-    au FileType groovy setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
-    au FileType xml setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-    au FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-    au FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-    au FileType sh setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-    au FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-    au FileType cpp setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
-    "make.inc is detected as pov filetype, set syntax to Makefile
-    au FileType pov set syntax=make
-    au BufRead,BufNewFile *.jelly set syntax=html
-endif
 
 " Tmux navigator
 let g:tmux_navigator_no_mappings = 1
