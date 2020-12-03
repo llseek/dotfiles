@@ -57,7 +57,6 @@ Plug 'voldikss/vim-floaterm'
 call plug#end()
 
 " General
-let mapleader=' '
 syntax on
 inoremap jj <ESC>:w<CR>
 noremap <Leader>r :source ~/.vimrc<CR>
