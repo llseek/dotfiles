@@ -65,8 +65,8 @@ done
 
 vim --noplugin +PlugInstall +qall
 
-if [ "$(uname -s)" != 'Darwin' ]; then
-  # install universal-ctags
+# install universal-ctags
+if ! command -v ctags || ! (ctags --version | grep "Universal Ctags"); then
   rm -rf /tmp/ctags
   git clone https://github.com/universal-ctags/ctags.git /tmp/ctags
   pushd /tmp/ctags
@@ -75,8 +75,10 @@ if [ "$(uname -s)" != 'Darwin' ]; then
   make -j16
   sudo make install
   popd
+fi
 
-  # install ccls
+# install ccls
+if ! command -v ccls; then
   $PKG_INSTALL zlib1g-dev python3-dev clang-9 libclang-9-dev llvm-9-dev liblua5.2-dev libncurses5-dev rapidjson-dev ninja-build
   git clone https://github.com/MaskRay/ccls /tmp/ccls
   pushd /tmp/ccls
@@ -89,22 +91,27 @@ if [ "$(uname -s)" != 'Darwin' ]; then
 fi
 
 # install ycm
-pushd .vim/plugged/YouCompleteMe
-./install.py
-popd
+if [ ! -f ".vim/plugged/YouCompleteMe/third_party/ycmd/ycm_core.so" ]; then
+  pushd .vim/plugged/YouCompleteMe
+  ./install.py
+  popd
+fi
 
 # install cc
-pushd .vim/plugged/color_coded
-mkdir -p build
-cd build
-if [ "$(uname -s)" != 'Darwin' ]; then
-  cmake -DDOWNLOAD_CLANG=0 ..
-else
-  cmake ..
+if [ ! -f ".vim/plugged/color_coded/color_coded.so" ]; then
+  sudo ln -sf $(command -v llvm-config-9) /usr/bin/llvm-config
+  pushd .vim/plugged/color_coded
+  mkdir -p build
+  cd build
+  if [ "$(uname -s)" != 'Darwin' ]; then
+    cmake -DDOWNLOAD_CLANG=0 ..
+  else
+    cmake ..
+  fi
+  make -j16
+  make install
+  popd
 fi
-make -j16
-make install
-popd
 
 echo '    StrictHostKeyChecking no' | sudo tee -a /etc/ssh/ssh_config
 echo '    UserKnownHostsFile /dev/null' | sudo tee -a /etc/ssh/ssh_config
