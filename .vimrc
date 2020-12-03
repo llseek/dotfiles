@@ -235,10 +235,11 @@ let g:ycm_language_server =
   \ }]
 let g:ycm_auto_hover = ''
 nmap <leader>d <plug>(YCMHover)
-map <C-]> :YcmCompleter GoTo<CR>
-map <C-\> :YcmCompleter GoToReferences<CR>
-map <C-i> :YcmCompleter GoToImplementation<CR>
-map <C-s> :YcmCompleter GoToSymbol 
+nmap gd :YcmCompleter GoTo<CR>
+nmap gy :YcmCompleter GoToType<CR>
+nmap gi :YcmCompleter GoToImplementation<CR>
+nmap gr :YcmCompleter GoToReferences<CR>
+nmap gs :YcmCompleter GoToSymbol 
 
 " Termdebug
 packadd termdebug
