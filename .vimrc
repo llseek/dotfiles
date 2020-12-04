@@ -143,9 +143,8 @@ au FileType c,cpp nested :TagbarOpen
 let NERDTreeShowHidden=1
 let NERDTreeIgnore = ['\.swp$']
 
-" returns true iff is NERDTree open/active
-function! IsNTOpen()
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+function! s:isNERDTreeOpen()
+  return exists("g:NERDTree") && g:NERDTree.IsOpen()
 endfunction
 
 " returns true iff focused window is NERDTree window
@@ -164,7 +163,7 @@ endfunction
 
 " calls NERDTreeFind iff NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
 function! SyncTree()
-  if &modifiable && IsNTOpen() && !IsNTFocused() && strlen(expand('%')) > 0 && !&diff && IsInsideCwd() && !s:isTagbar()
+  if &modifiable && s:isNERDTreeOpen() && !IsNTFocused() && strlen(expand('%')) > 0 && !&diff && IsInsideCwd() && !s:isTagbar()
     NERDTreeFind
     wincmd p
   endif
