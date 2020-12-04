@@ -158,9 +158,13 @@ function! IsInsideCwd()
   return -1 != stridx(expand('%:p'), getcwd())
 endfunction
 
+function! s:isTagbar()
+  return 0 == match(bufname(''), '__Tagbar__')
+endfunction
+
 " calls NERDTreeFind iff NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
 function! SyncTree()
-  if &modifiable && IsNTOpen() && !IsNTFocused() && strlen(expand('%')) > 0 && !&diff && IsInsideCwd()
+  if &modifiable && IsNTOpen() && !IsNTFocused() && strlen(expand('%')) > 0 && !&diff && IsInsideCwd() && !s:isTagbar()
     NERDTreeFind
     wincmd p
   endif
