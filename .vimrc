@@ -155,15 +155,13 @@ function! s:isTagbar()
   return 0 == match(bufname(''), '__Tagbar__')
 endfunction
 
-" calls NERDTreeFind iff NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
-function! SyncTree()
+function! SyncNERDTree()
   if &modifiable && !&diff && s:isNERDTreeOpen() && s:isInsideCwd() && !s:isTagbar()
-    NERDTreeFind
-    wincmd p
+    NERDTreeFind | wincmd p
   endif
 endfunction
 
-au BufEnter * call SyncTree()
+au BufEnter * call SyncNERDTree()
 
 function! OpenNERDTree()
   if exists(':NERDTree')
