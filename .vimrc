@@ -147,8 +147,7 @@ function! s:isNERDTreeOpen()
   return exists("g:NERDTree") && g:NERDTree.IsOpen()
 endfunction
 
-" returns true iff focused window contains a file in current pwd
-function! IsInsideCwd()
+function! s:isInsideCwd()
   return -1 != stridx(expand('%:p'), getcwd())
 endfunction
 
@@ -158,7 +157,7 @@ endfunction
 
 " calls NERDTreeFind iff NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
 function! SyncTree()
-  if &modifiable && !&diff && s:isNERDTreeOpen() && IsInsideCwd() && !s:isTagbar()
+  if &modifiable && !&diff && s:isNERDTreeOpen() && s:isInsideCwd() && !s:isTagbar()
     NERDTreeFind
     wincmd p
   endif
