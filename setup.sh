@@ -38,16 +38,13 @@ install_ycm() {
 
 install_cc() {
   [ -f ".vim/plugged/color_coded/color_coded.so" ] && return
-  sudo ln -sf $(command -v llvm-config-9) /usr/bin/llvm-config
+  if [ "$(uname -s)" != 'Darwin' ]; then
+    sudo ln -sf $(command -v llvm-config-9) /usr/bin/llvm-config
+  fi
   pushd .vim/plugged/color_coded
   rm -rf build
   mkdir -p build
-  cd build
-  if [ "$(uname -s)" != 'Darwin' ]; then
-    cmake -DDOWNLOAD_CLANG=0 ..
-  else
-    cmake ..
-  fi
+  cmake -DDOWNLOAD_CLANG=0 ..
   make -j16
   make install
   popd
