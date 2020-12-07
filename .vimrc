@@ -205,6 +205,8 @@ nnoremap grbi :Git rebase -i<CR>
 " GitGutter
 nnoremap ga :GitGutterStageHunk<CR>
 nnoremap gu :GitGutterUndoHunk<CR>
+nmap gk <plug>(GitGutterPrevHunk)zz
+nmap gj <plug>(GitGutterNextHunk)zz
 
 " Fzf
 map <C-f> :Files<CR>
