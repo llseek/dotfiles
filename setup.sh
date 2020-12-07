@@ -50,7 +50,7 @@ install_cc() {
   popd
 }
 
-ZTV_ROOT=$PWD
+ROOT=$PWD
 
 if [ "$(uname -s)" == 'Darwin' ]; then
   brew upgrade
@@ -90,7 +90,7 @@ if [ "$(uname -s)" = 'Darwin' ]; then
 fi
 
 if [ ! -d .oh-my-zsh ]; then
-	git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh || exit
+  git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh || exit
 fi
 
 if [ ! -d .oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
@@ -102,13 +102,13 @@ if [ ! -d .tmux/plugins/tpm ]; then
   git clone https://github.com/tmux-plugins/tpm .tmux/plugins/tpm
 fi
 
-cp "$ZTV_ROOT"/llseek.zsh-theme ./.oh-my-zsh/themes/
+cp "$ROOT"/llseek.zsh-theme ./.oh-my-zsh/themes/
 
 sudo chsh -s "$(command -v zsh)" $LOGNAME
 
 for f in .zshrc .tmux.conf .vimrc .ackrc .ssh .gitignore; do
   [ -f $f ] || [ -d $f ] && [ ! -L $f ] && mv $f $f.old
-  ln -svf "$ZTV_ROOT/$f" .
+  ln -svf "$ROOT/$f" .
 done
 
 vim --noplugin +PlugInstall +qall
@@ -122,7 +122,7 @@ echo '    StrictHostKeyChecking no' | sudo tee -a /etc/ssh/ssh_config
 echo '    UserKnownHostsFile /dev/null' | sudo tee -a /etc/ssh/ssh_config
 
 mkdir -p $FONTS_DIR
-cp "$ZTV_ROOT"/fonts/* $FONTS_DIR
+cp "$ROOT"/fonts/* $FONTS_DIR
 fc-cache -f
 
 # NOTE: need to toolkit.legacyUserProfileCustomizations.stylesheets to true in about:config
@@ -130,7 +130,7 @@ fc-cache -f
 if [ -d "$FIREFOX_PROFILE" ]; then
   d=$(ls -d "$FIREFOX_PROFILE"/*default*)
   mkdir -p "$d"/chrome
-  cp "$ZTV_ROOT"/firefox/userChrome.css "$d"/chrome
+  cp "$ROOT"/firefox/userChrome.css "$d"/chrome
   echo "Firefox's userChrome.css: $d/chrome/userChrome.css"
 fi
 
