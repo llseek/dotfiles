@@ -87,6 +87,7 @@ else
 endif
 set background=light
 colorscheme solarized8
+hi VertSplit guibg=bg guifg=bg
 
 " Clipboard
 if has('clipboard')
