@@ -241,6 +241,7 @@ nmap gs :YcmCompleter GoToSymbol
 packadd termdebug
 let g:termdebug_wide = 1
 tnoremap <silent> <C-a>[ <C-w>N:set nonu<cr>
+tnoremap <silent> gt <C-w>Ngt
 nnoremap <silent> <C-a>r :Run<CR>
 nnoremap <C-a>a :Arguments
 nnoremap <silent> <C-a>b :Break<CR>
