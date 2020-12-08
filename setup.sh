@@ -64,10 +64,10 @@ else
   FONTS_DIR='.fonts'
 fi
 
-git config user.email "yxj0207@gmail.com"
-git config user.name "Xiaojie Yuan"
-git config core.editor vim
-git config push.default simple
+git config --global user.email "yxj0207@gmail.com"
+git config --global user.name "Xiaojie Yuan"
+git config --global core.editor vim
+git config --global push.default simple
 git config --global core.excludesfile "$HOME/.gitignore"
 git config --global rebase.instructionformat "[%an] %s"
 
