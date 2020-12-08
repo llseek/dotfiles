@@ -176,6 +176,7 @@ au BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTre
 
 " Airline
 let g:airline_theme='solarized'
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#mixed_indent_algo=1
 let g:airline#extensions#tabline#enabled = 1
 
