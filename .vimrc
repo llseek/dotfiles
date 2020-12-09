@@ -143,6 +143,7 @@ au FileType c,cpp nested :TagbarOpen
 
 " Nerdtree
 let NERDTreeShowHidden=1
+let NERDTreeMouseMode=3
 let NERDTreeMinimalUI=1
 let NERDTreeIgnore = ['\.swp$']
 
