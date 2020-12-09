@@ -242,12 +242,13 @@ let g:ycm_language_server =
   \   'project_root_files': [ '.ccls-root', 'compile_commands.json'  ]
   \ }]
 let g:ycm_auto_hover = ''
+let g:ycm_goto_buffer_command = 'split-or-existing-window'
 nmap <leader>d <plug>(YCMHover)
-nmap gd :YcmCompleter GoTo<CR>
-nmap gy :YcmCompleter GoToType<CR>
-nmap gi :YcmCompleter GoToImplementation<CR>
-nmap gr :YcmCompleter GoToReferences<CR>
-nmap gs :YcmCompleter GoToSymbol 
+nmap gd :tab YcmCompleter GoTo<CR>
+nmap gy :tab YcmCompleter GoToType<CR>
+nmap gi :tab YcmCompleter GoToImplementation<CR>
+nmap gr :tab YcmCompleter GoToReferences<CR>
+nmap gs :tab YcmCompleter GoToSymbol 
 
 " Termdebug
 packadd termdebug
