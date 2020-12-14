@@ -28,7 +28,7 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/gv.vim'
 Plug 'mhinz/vim-startify'
 Plug 'honza/vim-snippets'
-"Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 Plug 'lifepillar/vim-solarized8'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
@@ -225,6 +225,9 @@ nnoremap ga :GitGutterStageHunk<CR>
 nnoremap gu :GitGutterUndoHunk<CR>
 nmap gk <plug>(GitGutterPrevHunk)zz
 nmap gj <plug>(GitGutterNextHunk)zz
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<c-e>"
 
 " Fzf
 map ff :Files<CR>
