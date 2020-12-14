@@ -29,18 +29,8 @@ Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/gv.vim'
 Plug 'mhinz/vim-startify'
-
-" default snippets (under .vim/bundle/vim-snippets/)
-"   contents:
-"   - snippets/*: snippets using snipMate format
-"   - UltiSnips/*: snippets using UltiSnips format
 Plug 'honza/vim-snippets'
-" snippet engine(python), supports all snippets in above repo
 "Plug 'SirVer/ultisnips'
-" snippet engine(VimL), supports snippets/*
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
 Plug 'lifepillar/vim-solarized8'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
