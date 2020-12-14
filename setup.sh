@@ -106,7 +106,7 @@ cp "$ROOT"/llseek.zsh-theme ./.oh-my-zsh/themes/
 
 sudo chsh -s "$(command -v zsh)" $LOGNAME
 
-for f in .zshrc .tmux.conf .vimrc .ackrc .ssh .gitignore; do
+for f in .zshrc .tmux.conf .vimrc .ackrc .gitignore; do
   [ -f $f ] || [ -d $f ] && [ ! -L $f ] && mv $f $f.old
   ln -svf "$ROOT/$f" .
 done
