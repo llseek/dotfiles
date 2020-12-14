@@ -123,7 +123,7 @@ au FileType c,cpp nested :TagbarOpen
 let NERDTreeShowHidden=1
 let NERDTreeMouseMode=3
 let NERDTreeMinimalUI=1
-let NERDTreeIgnore = ['\.swp$']
+let NERDTreeIgnore = ['\.swp$', '.git', '.ccls-cache']
 
 function! s:isNERDTreeOpen()
   return exists("g:NERDTree") && g:NERDTree.IsOpen()
