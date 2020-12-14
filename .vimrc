@@ -229,8 +229,8 @@ nmap gk <plug>(GitGutterPrevHunk)zz
 nmap gj <plug>(GitGutterNextHunk)zz
 
 " Fzf
-map <C-f> :Files<CR>
-map <C-g> :Rg<CR>
+map ff :Files<CR>
+map fg :Rg<CR>
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden '
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
