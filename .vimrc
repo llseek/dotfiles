@@ -14,7 +14,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-scripts/a.vim'
 Plug 'vim-scripts/gtags.vim'
 Plug 'vim-scripts/DrawIt'
-Plug 'godlygeek/tabular'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'itchyny/lightline.vim'
