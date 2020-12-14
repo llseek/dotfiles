@@ -28,7 +28,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-obsession'
-Plug 'mileszs/ack.vim'
 Plug 'junegunn/gv.vim'
 Plug 'mhinz/vim-startify'
 
