@@ -73,7 +73,6 @@ set laststatus=2
 set backspace=indent,eol,start
 set fillchars+=vert:\ 
 set updatetime=1000
-set switchbuf+=usetab,newtab
 " :help last-position-jump
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
