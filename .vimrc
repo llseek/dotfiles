@@ -27,7 +27,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-obsession'
 Plug 'junegunn/gv.vim'
 Plug 'mhinz/vim-startify'
 
