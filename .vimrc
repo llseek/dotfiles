@@ -133,12 +133,16 @@ function! s:isInsideCwd()
   return -1 != stridx(expand('%:p'), getcwd())
 endfunction
 
+function! s:isNERDTree()
+  return 0 == match(bufname(''), 'NERD_tree_')
+endfunction
+
 function! s:isTagbar()
   return 0 == match(bufname(''), '__Tagbar__')
 endfunction
 
 function! SyncNERDTree()
-  if &modifiable && !&diff && s:isNERDTreeOpen() && s:isInsideCwd() && !s:isTagbar()
+  if &modifiable && !&diff && s:isNERDTreeOpen() && s:isInsideCwd() && !s:isNERDTree() && !s:isTagbar()
     NERDTreeFind | wincmd p
   endif
 endfunction
