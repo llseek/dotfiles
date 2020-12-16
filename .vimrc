@@ -151,7 +151,7 @@ function! OpenNERDTree()
   endif
 endfunction
 
-au VimEnter * :call OpenNERDTree()
+" au VimEnter * :call OpenNERDTree()
 
 function! MirrorNERDTree()
   if &modifiable && !&diff && !s:isNERDTreeOpen() && s:isInsideCwd() && !s:isTagbar()
