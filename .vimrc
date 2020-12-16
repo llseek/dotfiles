@@ -157,13 +157,6 @@ endfunction
 
 " au VimEnter * :call OpenNERDTree()
 
-function! MirrorNERDTree()
-  if &modifiable && !&diff && !s:isNERDTreeOpen() && s:isInsideCwd() && !s:isTagbar()
-    NERDTreeMirror
-  endif
-endfunction
-
-au BufWinEnter * :call MirrorNERDTree()
 au BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Lightline
