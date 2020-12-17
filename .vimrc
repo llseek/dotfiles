@@ -223,6 +223,13 @@ nnoremap gu :GitGutterUndoHunk<CR>
 nmap gk <plug>(GitGutterPrevHunk)zz
 nmap gj <plug>(GitGutterNextHunk)zz
 
+" Startify
+let g:startify_session_dir = '.session'
+let g:startify_session_before_save = [
+  \ 'silent! NERDTreeClose',
+  \ 'silent! TagbarClose'
+  \ ]
+
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<c-e>"
 
