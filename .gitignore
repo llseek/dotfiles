@@ -11,4 +11,5 @@ authorized_keys
 .color_coded
 .ccls
 .ccls-cache
+.session
 compile_commands.json
