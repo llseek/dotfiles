@@ -1,8 +1,15 @@
 " Memo
+" text object:
 " diw - delete the word that cursor is on
 " ciw - edit the word that cursor is on
 " ci( - edit the content inside ()
 " vip - select the paragraph
+"
+" surround:
+" cs'"  - change surround from ' to "
+" ds'   - delete surround '
+" ysiw' - add surround around current word
+" yss'  - add surround around current line
 
 " Plug
 if empty(glob('~/.vim/autoload/plug.vim'))
