@@ -130,6 +130,7 @@ alias glog='git log --pretty=format:"%Cred%h %Cgreen%aN%Cblue%d %Creset%s"'
 alias d='dmesg | less +G'
 alias dl='aria2c -s 16 -x 16'
 alias s='sudo screen /dev/ttyUSB0 115200,cs8,-ixon,-ixoff'
+alias ssh='autossh -X'
 
 # source personal configs
 [[ -f ~/..zshrc ]] && source ~/..zshrc
