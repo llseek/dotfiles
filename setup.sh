@@ -6,6 +6,7 @@ install_ctags() {
   if command -v ctags && (ctags --version | grep "Universal Ctags"); then
     return
   fi
+  $PKG_INSTALL autoconf automake pkg-config
   rm -rf /tmp/ctags
   git clone https://github.com/universal-ctags/ctags.git /tmp/ctags
   pushd /tmp/ctags
