@@ -56,6 +56,20 @@ install_cc() {
   popd
 }
 
+install_git() {
+  $PKG_INSTALL git
+}
+
+config_git() {
+  git config --global user.email "yxj0207@gmail.com"
+  git config --global user.name "Xiaojie Yuan"
+  git config --global core.editor vim
+  git config --global push.default simple
+  git config --global core.excludesfile "$HOME/.gitignore"
+  git config --global rebase.instructionformat "[%an] %s"
+  do_link .gitignore
+}
+
 install_vim() {
   $PKG_INSTALL vim
 }
@@ -112,17 +126,9 @@ else
   FONTS_DIR='.fonts'
 fi
 
-git config --global user.email "yxj0207@gmail.com"
-git config --global user.name "Xiaojie Yuan"
-git config --global core.editor vim
-git config --global push.default simple
-git config --global core.excludesfile "$HOME/.gitignore"
-git config --global rebase.instructionformat "[%an] %s"
-
 cd "$HOME"
 
-$PKG_INSTALL git                \
-             global             \
+$PKG_INSTALL global             \
              curl               \
              ack                \
              cmake              \
@@ -134,11 +140,8 @@ if [ "$(uname -s)" = 'Darwin' ]; then
   $PKG_INSTALL rg bat
 fi
 
-for f in .ackrc .gitignore; do
-  [ -f $f ] || [ -d $f ] && [ ! -L $f ] && mv $f $f.old
-  ln -svf "$ROOT/$f" .
-done
-
+install_git
+config_git
 install_vim
 config_vim
 install_zsh
