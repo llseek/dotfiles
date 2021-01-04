@@ -123,6 +123,17 @@ config_font() {
   fc-cache -f
 }
 
+config_firefox() {
+  # NOTE: need to toolkit.legacyUserProfileCustomizations.stylesheets to true in about:config
+  #       https://github.com/piroor/treestyletab/wiki/Code-snippets-for-custom-style-rules#slightly-betterworse-option-for-hiding-tabs-depending-on-what-you-want
+  if [ -d "$FIREFOX_PROFILE" ]; then
+    d=$(ls -d "$FIREFOX_PROFILE"/*default*)
+    mkdir -p "$d"/chrome
+    cp "$ROOT"/firefox/userChrome.css "$d"/chrome
+    echo "Firefox's userChrome.css: $d/chrome/userChrome.css"
+  fi
+}
+
 ROOT=$PWD
 
 if [ "$(uname -s)" == 'Darwin' ]; then
@@ -161,14 +172,6 @@ install_tmux
 config_tmux
 config_ssh
 config_font
-
-# NOTE: need to toolkit.legacyUserProfileCustomizations.stylesheets to true in about:config
-#       https://github.com/piroor/treestyletab/wiki/Code-snippets-for-custom-style-rules#slightly-betterworse-option-for-hiding-tabs-depending-on-what-you-want
-if [ -d "$FIREFOX_PROFILE" ]; then
-  d=$(ls -d "$FIREFOX_PROFILE"/*default*)
-  mkdir -p "$d"/chrome
-  cp "$ROOT"/firefox/userChrome.css "$d"/chrome
-  echo "Firefox's userChrome.css: $d/chrome/userChrome.css"
-fi
+config_firefox
 
 echo "Asia/Shanghai" | sudo tee /etc/timezone
