@@ -103,7 +103,8 @@ if [ ! -d .tmux/plugins/tpm ]; then
   git clone https://github.com/tmux-plugins/tpm .tmux/plugins/tpm
 fi
 
-cp "$ROOT"/llseek.zsh-theme ./.oh-my-zsh/themes/
+rm -f .oh-my-zsh/themes/llseek.zsh-theme
+ln -svf "$ROOT"/llseek.zsh-theme .oh-my-zsh/themes/
 
 sudo chsh -s "$(command -v zsh)" $LOGNAME
 
