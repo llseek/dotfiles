@@ -113,12 +113,6 @@ export CVSROOT=ncvs:/usr/cvsroot/cev
 export CVS_RSH=ssh
 export CVSEDITOR=vim
 
-# proxy
-if [ "$(sudo lsof -i4TCP:8080 -nP | grep LISTEN | awk '{ print $1  }')" = "v2ray" ]; then
-  export http_proxy="http://127.0.0.1:8080"
-  export https_proxy="http://127.0.0.1:8080"
-fi
-
 # locale
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
