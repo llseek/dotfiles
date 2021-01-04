@@ -138,6 +138,37 @@ config_timezone() {
   echo "Asia/Shanghai" | sudo tee /etc/timezone
 }
 
+usage ()
+{
+  echo "Usage :  $0 [options] [--]
+
+    Options:
+    -h|help       Display this message
+    -v|version    Display script version"
+
+}
+
+zsh_only=false
+
+while getopts ":hz" opt
+do
+  case $opt in
+  h|help)
+    usage
+    exit 0
+    ;;
+  z|zsh_only)
+    zsh_only=true
+    ;;
+  *)
+    echo -e "\n  Option does not exist : $OPTARG\n"
+    usage
+    exit 1
+    ;;
+  esac
+done
+shift $(($OPTIND-1))
+
 ROOT=$PWD
 
 if [ "$(uname -s)" == 'Darwin' ]; then
@@ -164,6 +195,12 @@ $PKG_INSTALL global             \
 
 if [ "$(uname -s)" = 'Darwin' ]; then
   $PKG_INSTALL rg bat
+fi
+
+if $zsh_only; then
+  install_zsh
+  config_zsh
+  exit
 fi
 
 install_git
