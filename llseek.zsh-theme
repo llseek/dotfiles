@@ -1,4 +1,10 @@
-local ret_status="%(?:%{$fg[green]%}"$(hostname)":%{$fg[red]%}"$(hostname)"%s)"
+local hostname=
+if [ -f ~/.hostname ]; then
+  hostname=$(cat ~/.hostname)
+else
+  hostname=$(hostname)
+fi
+local ret_status="%(?:%{$fg[green]%}"${hostname}":%{$fg[red]%}"${hostname}"%s)"
 PROMPT='${ret_status}%{$fg[green]%}%p %{$fg[cyan]%}%c %{$fg[blue]%}$(git_prompt_info)%{$fg[blue]%}%{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="(%{$fg[red]%}"
