@@ -112,6 +112,11 @@ config_tmux() {
   do_link .tmux.conf
 }
 
+config_ssh() {
+  echo '    StrictHostKeyChecking no' | sudo tee -a /etc/ssh/ssh_config
+  echo '    UserKnownHostsFile /dev/null' | sudo tee -a /etc/ssh/ssh_config
+}
+
 ROOT=$PWD
 
 if [ "$(uname -s)" == 'Darwin' ]; then
@@ -148,9 +153,7 @@ install_zsh
 config_zsh
 install_tmux
 config_tmux
-
-echo '    StrictHostKeyChecking no' | sudo tee -a /etc/ssh/ssh_config
-echo '    UserKnownHostsFile /dev/null' | sudo tee -a /etc/ssh/ssh_config
+config_ssh
 
 mkdir -p $FONTS_DIR
 cp "$ROOT"/fonts/* $FONTS_DIR
