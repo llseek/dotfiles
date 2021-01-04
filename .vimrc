@@ -10,6 +10,7 @@
 " ds'   - delete surround '
 " ysiw' - add surround around current word
 " yss'  - add surround around current line
+" ysip' - add surround around current paragraph
 
 " Plug
 if empty(glob('~/.vim/autoload/plug.vim'))
