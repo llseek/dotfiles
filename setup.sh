@@ -134,6 +134,10 @@ config_firefox() {
   fi
 }
 
+config_timezone() {
+  echo "Asia/Shanghai" | sudo tee /etc/timezone
+}
+
 ROOT=$PWD
 
 if [ "$(uname -s)" == 'Darwin' ]; then
@@ -173,5 +177,4 @@ config_tmux
 config_ssh
 config_font
 config_firefox
-
-echo "Asia/Shanghai" | sudo tee /etc/timezone
+config_timezone
