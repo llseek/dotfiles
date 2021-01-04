@@ -86,6 +86,18 @@ config_zsh() {
   sudo chsh -s "$(command -v zsh)" $LOGNAME
 }
 
+install_tmux() {
+  $PKG_INSTALL tmux
+}
+
+config_tmux() {
+  if [ ! -d .tmux/plugins/tpm ]; then
+    mkdir -p .tmux/plugins
+    git clone https://github.com/tmux-plugins/tpm .tmux/plugins/tpm
+  fi
+  do_link .tmux.conf
+}
+
 ROOT=$PWD
 
 if [ "$(uname -s)" == 'Darwin' ]; then
@@ -110,7 +122,6 @@ git config --global rebase.instructionformat "[%an] %s"
 cd "$HOME"
 
 $PKG_INSTALL git                \
-             tmux               \
              global             \
              curl               \
              ack                \
@@ -123,12 +134,7 @@ if [ "$(uname -s)" = 'Darwin' ]; then
   $PKG_INSTALL rg bat
 fi
 
-if [ ! -d .tmux/plugins/tpm ]; then
-  mkdir -p .tmux/plugins
-  git clone https://github.com/tmux-plugins/tpm .tmux/plugins/tpm
-fi
-
-for f in .tmux.conf .ackrc .gitignore; do
+for f in .ackrc .gitignore; do
   [ -f $f ] || [ -d $f ] && [ ! -L $f ] && mv $f $f.old
   ln -svf "$ROOT/$f" .
 done
@@ -137,6 +143,8 @@ install_vim
 config_vim
 install_zsh
 config_zsh
+install_tmux
+config_tmux
 
 echo '    StrictHostKeyChecking no' | sudo tee -a /etc/ssh/ssh_config
 echo '    UserKnownHostsFile /dev/null' | sudo tee -a /etc/ssh/ssh_config
