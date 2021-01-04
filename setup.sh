@@ -2,6 +2,11 @@
 
 set -eu
 
+do_link() {
+  [ -f $1 ] || [ -d $1 ] && [ ! -L $1 ] && mv $1 $1.old
+  ln -svf "$ROOT/$1"
+}
+
 install_ctags() {
   if command -v ctags && (ctags --version | grep "Universal Ctags"); then
     return
@@ -51,6 +56,19 @@ install_cc() {
   popd
 }
 
+install_vim() {
+  $PKG_INSTALL vim
+}
+
+config_vim() {
+  do_link .vimrc
+  vim --noplugin +PlugInstall +qall
+  install_ctags
+  install_ccls
+  install_ycm
+  install_cc
+}
+
 ROOT=$PWD
 
 if [ "$(uname -s)" == 'Darwin' ]; then
@@ -77,7 +95,6 @@ cd "$HOME"
 $PKG_INSTALL git                \
              zsh                \
              tmux               \
-             vim                \
              global             \
              curl               \
              ack                \
@@ -108,17 +125,13 @@ ln -svf "$ROOT"/llseek.zsh-theme .oh-my-zsh/themes/
 
 sudo chsh -s "$(command -v zsh)" $LOGNAME
 
-for f in .zshrc .tmux.conf .vimrc .ackrc .gitignore; do
+for f in .zshrc .tmux.conf .ackrc .gitignore; do
   [ -f $f ] || [ -d $f ] && [ ! -L $f ] && mv $f $f.old
   ln -svf "$ROOT/$f" .
 done
 
-vim --noplugin +PlugInstall +qall
-
-install_ctags
-install_ccls
-install_ycm
-install_cc
+install_vim
+config_vim
 
 echo '    StrictHostKeyChecking no' | sudo tee -a /etc/ssh/ssh_config
 echo '    UserKnownHostsFile /dev/null' | sudo tee -a /etc/ssh/ssh_config
