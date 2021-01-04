@@ -69,6 +69,23 @@ config_vim() {
   install_cc
 }
 
+install_zsh() {
+  $PKG_INSTALL zsh
+}
+
+config_zsh() {
+  if [ ! -d .oh-my-zsh ]; then
+    git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh
+  fi
+  if [ ! -d .oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
+    git clone https://github.com/zsh-users/zsh-autosuggestions .oh-my-zsh/custom/plugins/zsh-autosuggestions
+  fi
+  rm -f .oh-my-zsh/themes/llseek.zsh-theme
+  ln -svf "$ROOT"/llseek.zsh-theme .oh-my-zsh/themes/
+  do_link .zshrc
+  sudo chsh -s "$(command -v zsh)" $LOGNAME
+}
+
 ROOT=$PWD
 
 if [ "$(uname -s)" == 'Darwin' ]; then
@@ -93,7 +110,6 @@ git config --global rebase.instructionformat "[%an] %s"
 cd "$HOME"
 
 $PKG_INSTALL git                \
-             zsh                \
              tmux               \
              global             \
              curl               \
@@ -107,31 +123,20 @@ if [ "$(uname -s)" = 'Darwin' ]; then
   $PKG_INSTALL rg bat
 fi
 
-if [ ! -d .oh-my-zsh ]; then
-  git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh || exit
-fi
-
-if [ ! -d .oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
-  git clone https://github.com/zsh-users/zsh-autosuggestions .oh-my-zsh/custom/plugins/zsh-autosuggestions || exit
-fi
-
 if [ ! -d .tmux/plugins/tpm ]; then
   mkdir -p .tmux/plugins
   git clone https://github.com/tmux-plugins/tpm .tmux/plugins/tpm
 fi
 
-rm -f .oh-my-zsh/themes/llseek.zsh-theme
-ln -svf "$ROOT"/llseek.zsh-theme .oh-my-zsh/themes/
-
-sudo chsh -s "$(command -v zsh)" $LOGNAME
-
-for f in .zshrc .tmux.conf .ackrc .gitignore; do
+for f in .tmux.conf .ackrc .gitignore; do
   [ -f $f ] || [ -d $f ] && [ ! -L $f ] && mv $f $f.old
   ln -svf "$ROOT/$f" .
 done
 
 install_vim
 config_vim
+install_zsh
+config_zsh
 
 echo '    StrictHostKeyChecking no' | sudo tee -a /etc/ssh/ssh_config
 echo '    UserKnownHostsFile /dev/null' | sudo tee -a /etc/ssh/ssh_config
