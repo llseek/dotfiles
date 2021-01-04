@@ -117,6 +117,12 @@ config_ssh() {
   echo '    UserKnownHostsFile /dev/null' | sudo tee -a /etc/ssh/ssh_config
 }
 
+config_font() {
+  mkdir -p $FONTS_DIR
+  cp "$ROOT"/fonts/* $FONTS_DIR
+  fc-cache -f
+}
+
 ROOT=$PWD
 
 if [ "$(uname -s)" == 'Darwin' ]; then
@@ -154,10 +160,7 @@ config_zsh
 install_tmux
 config_tmux
 config_ssh
-
-mkdir -p $FONTS_DIR
-cp "$ROOT"/fonts/* $FONTS_DIR
-fc-cache -f
+config_font
 
 # NOTE: need to toolkit.legacyUserProfileCustomizations.stylesheets to true in about:config
 #       https://github.com/piroor/treestyletab/wiki/Code-snippets-for-custom-style-rules#slightly-betterworse-option-for-hiding-tabs-depending-on-what-you-want
