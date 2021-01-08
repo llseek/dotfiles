@@ -50,6 +50,7 @@ install_cc() {
   pushd .vim/plugged/color_coded
   rm -rf build
   mkdir -p build
+  cd build
   cmake -DDOWNLOAD_CLANG=0 ..
   make -j16
   make install
