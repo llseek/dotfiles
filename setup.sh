@@ -72,7 +72,24 @@ config_git() {
 }
 
 install_vim() {
-  $PKG_INSTALL vim
+  if [ "$(uname -s)" == 'Darwin' ]; then
+    $PKG_INSTALL vim
+    return
+  fi
+
+  $PKG_INSTALL liblua5.2-dev autoconf automake pkg-config
+  sudo ln -sf /usr/include/{lua5.2,lua}
+  sudo ln -sf /usr/lib/x86_64-linux-gnu/{liblua5.2.so,liblua.so}
+  rm -rf /tmp/vim
+  git clone --depth 1 https://github.com/vim/vim /tmp/vim
+  pushd /tmp/vim
+  ./configure --prefix=/usr/local \
+              --enable-fail-if-missing \
+              --enable-luainterp=yes \
+              --enable-python3interp=yes
+  make -j16
+  sudo make install
+  popd
 }
 
 config_vim() {
