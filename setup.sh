@@ -77,7 +77,7 @@ install_vim() {
     return
   fi
 
-  $PKG_INSTALL liblua5.2-dev autoconf automake pkg-config
+  $PKG_INSTALL xorg-dev liblua5.2-dev autoconf automake pkg-config
   sudo ln -sf /usr/include/{lua5.2,lua}
   sudo ln -sf /usr/lib/x86_64-linux-gnu/{liblua5.2.so,liblua.so}
   rm -rf /tmp/vim
@@ -86,7 +86,8 @@ install_vim() {
   ./configure --prefix=/usr/local \
               --enable-fail-if-missing \
               --enable-luainterp=yes \
-              --enable-python3interp=yes
+              --enable-python3interp=yes \
+              --with-x
   make -j16
   sudo make install
   popd
