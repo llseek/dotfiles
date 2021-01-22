@@ -115,7 +115,7 @@ set splitright
 " Gtags
 map <C-n> :cn<CR>
 map <C-p> :cp<CR>
-"map <C-\> :GtagsCursor<CR>
+map <C-\> :GtagsCursor<CR>
 
 " Tagbar
 let g:tagbar_position = 'right'
