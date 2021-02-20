@@ -173,6 +173,8 @@ au BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTre
 " Lightline
 let g:lightline = {}
 let g:lightline.colorscheme = 'solarized'
+let g:lightline.active = { 'left': [['filename']], 'right': [[]] }
+let g:lightline.inactive = { 'left': [['filename']], 'right': [[]] }
 let g:lightline.enable = { 'statusline': 1, 'tabline': 1 }
 let g:lightline.separator = { 'left': '', 'right': '' }
 let g:lightline.subseparator = { 'left': '', 'right': '' }
