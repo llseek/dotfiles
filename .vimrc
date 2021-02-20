@@ -43,6 +43,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'llseek/YouCompleteMe', { 'branch': 'prio-c++17' }
 Plug 'jeaye/color_coded'
 Plug 'voldikss/vim-floaterm'
+Plug 'mmarchini/bpftrace.vim'
 call plug#end()
 
 " General
