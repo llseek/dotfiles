@@ -81,7 +81,7 @@ else
 endif
 set background=light
 colorscheme solarized8
-hi VertSplit guibg=bg guifg=bg
+hi VertSplit guibg=#eee8d5
 
 " Clipboard
 if has('clipboard')
