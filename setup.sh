@@ -157,6 +157,12 @@ config_timezone() {
   echo "Asia/Shanghai" | sudo tee /etc/timezone
 }
 
+config_fcitx() {
+  $PKG_INSTALL fcitx-googlepinyin fcitx-frontend-qt5
+  mkdir -p ~/.config/plasma-workspace/env
+  echo 'export QT_IM_MODULE=fcitx' > ~/.config/plasma-workspace/env/fcitx.sh
+}
+
 usage ()
 {
   echo "Usage :  $0 [options] [--]
@@ -234,3 +240,4 @@ config_ssh
 config_font
 config_firefox
 config_timezone
+config_fcitx
