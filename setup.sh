@@ -77,6 +77,10 @@ install_vim() {
     return
   fi
 
+  if vim --version | grep '+clipboard' && vim --version | grep '+lua'; then
+    return
+  fi
+
   $PKG_INSTALL xorg-dev liblua5.2-dev autoconf automake pkg-config
   sudo ln -sf /usr/include/{lua5.2,lua}
   sudo ln -sf /usr/lib/x86_64-linux-gnu/{liblua5.2.so,liblua.so}
