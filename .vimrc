@@ -279,8 +279,6 @@ nmap gs :YcmCompleter GoToSymbol
 " Termdebug
 packadd termdebug
 let g:termdebug_wide = 1
-tnoremap <silent> <C-a>[ <C-w>N:set nonu<cr>
-tnoremap <silent> gt <C-w>Ngt
 nnoremap <silent> <C-a>r :Run<CR>
 nnoremap <C-a>a :Arguments
 nnoremap <silent> <C-a>b :Break<CR>
@@ -290,6 +288,21 @@ nnoremap <silent> <C-a>n :Over<CR>
 nnoremap <silent> <C-a>f :Finish<CR>
 nnoremap <silent> <C-a>c :Continue<CR>
 nnoremap <silent> <C-a>p :Eval<CR>
+function! ExitNormalMode()
+    unmap <buffer> <silent> <RightMouse>
+    call feedkeys("a")
+endfunction
+
+function! EnterNormalMode()
+    if &buftype == 'terminal' && mode('') == 't'
+        set nonu
+        call feedkeys("\<c-w>N")
+        call feedkeys("\<c-y>")
+        map <buffer> <silent> <RightMouse> :call ExitNormalMode()<CR>
+    endif
+endfunction
+
+tmap <silent> <ScrollWheelUp> <c-w>:call EnterNormalMode()<CR>
 
 " Color_coded
 hi link Member Normal
