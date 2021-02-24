@@ -44,6 +44,7 @@ Plug 'llseek/YouCompleteMe', { 'branch': 'prio-c++17' }
 Plug 'jeaye/color_coded'
 Plug 'voldikss/vim-floaterm'
 Plug 'mmarchini/bpftrace.vim'
+Plug 'airblade/vim-rooter'
 call plug#end()
 
 " General
@@ -317,3 +318,6 @@ hi link EnumDecl Type
 " Floaterm
 let g:floaterm_keymap_toggle = '<Leader>t'
 let g:floaterm_autoclose=2
+
+" Rooter
+let g:rooter_patterns = ['.git']
