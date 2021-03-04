@@ -280,7 +280,6 @@ nmap gs :YcmCompleter GoToSymbol
 
 " Termdebug
 packadd termdebug
-let g:termdebug_wide = 1
 nnoremap <silent> <C-a>r :Run<CR>
 nnoremap <C-a>a :Arguments
 nnoremap <silent> <C-a>b :Break<CR>
