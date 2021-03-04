@@ -257,15 +257,6 @@ nmap gs :YcmCompleter GoToSymbol
 
 " Termdebug
 packadd termdebug
-nnoremap <silent> <C-a>r :Run<CR>
-nnoremap <C-a>a :Arguments
-nnoremap <silent> <C-a>b :Break<CR>
-nnoremap <silent> <C-a>d :Clear<CR>
-nnoremap <silent> <C-a>s :Step<CR>
-nnoremap <silent> <C-a>n :Over<CR>
-nnoremap <silent> <C-a>f :Finish<CR>
-nnoremap <silent> <C-a>c :Continue<CR>
-nnoremap <silent> <C-a>p :Eval<CR>
 function! ExitNormalMode()
     unmap <buffer> <silent> <RightMouse>
     call feedkeys("a")
