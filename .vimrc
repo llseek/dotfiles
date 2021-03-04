@@ -184,33 +184,6 @@ let g:lightline.inactive = { 'left': [['filename']], 'right': [[]] }
 let g:lightline.enable = { 'statusline': 1, 'tabline': 1 }
 let g:lightline.separator = { 'left': '', 'right': '' }
 let g:lightline.subseparator = { 'left': '', 'right': '' }
-let g:lightline.tabline = { 'left': [['buffers']], 'right': [[]] }
-let g:lightline.component_expand = { 'buffers': 'lightline#bufferline#buffers' }
-let g:lightline.component_type = { 'buffers': 'tabsel' }
-let g:lightline#bufferline#show_number = 2
-let g:lightline#bufferline#number_map = {
-  \ 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴',
-  \ 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹' }
-nmap b1 <Plug>lightline#bufferline#go(1)
-nmap b2 <Plug>lightline#bufferline#go(2)
-nmap b3 <Plug>lightline#bufferline#go(3)
-nmap b4 <Plug>lightline#bufferline#go(4)
-nmap b5 <Plug>lightline#bufferline#go(5)
-nmap b6 <Plug>lightline#bufferline#go(6)
-nmap b7 <Plug>lightline#bufferline#go(7)
-nmap b8 <Plug>lightline#bufferline#go(8)
-nmap b9 <Plug>lightline#bufferline#go(9)
-nmap b0 <Plug>lightline#bufferline#go(10)
-nmap d1 <Plug>lightline#bufferline#delete(1)
-nmap d2 <Plug>lightline#bufferline#delete(2)
-nmap d3 <Plug>lightline#bufferline#delete(3)
-nmap d4 <Plug>lightline#bufferline#delete(4)
-nmap d5 <Plug>lightline#bufferline#delete(5)
-nmap d6 <Plug>lightline#bufferline#delete(6)
-nmap d7 <Plug>lightline#bufferline#delete(7)
-nmap d8 <Plug>lightline#bufferline#delete(8)
-nmap d9 <Plug>lightline#bufferline#delete(9)
-nmap d0 <Plug>lightline#bufferline#delete(10)
 
 " Quickfix
 "nnoremap <C-q> :cclose<CR> - use togglelist.vim ?
