@@ -276,7 +276,6 @@ tmap <silent> <ScrollWheelUp> <c-w>:call EnterNormalMode()<CR>
 " Color_coded
 hi link Member Normal
 hi link Variable Normal
-hi Namespace guifg=red
 hi link EnumConstant Constant
 hi link StructDecl Type
 hi link UnionDecl Type
