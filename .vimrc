@@ -85,8 +85,10 @@ set background=dark
 colorscheme solarized8
 if &background == 'light'
   hi VertSplit guibg=#eee8d5
+  hi SignColumn guibg=#eee8d5
 elseif &background == 'dark'
   hi VertSplit guibg=#073642
+  hi SignColumn guibg=#073642
 endif
 
 " Clipboard
