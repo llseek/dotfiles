@@ -50,6 +50,9 @@ call plug#end()
 " General
 syntax on
 inoremap jj <ESC>:w<CR>
+map ,e :e <C-R>=expand("%:h") . "/" <CR>
+map ,s :split <C-R>=expand("%:h") . "/" <CR>
+map ,v :vsplit <C-R>=expand("%:h") . "/" <CR>
 noremap <Leader>r :source ~/.vimrc<CR>
 
 set exrc secure
