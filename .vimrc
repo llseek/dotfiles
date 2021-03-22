@@ -243,6 +243,7 @@ let g:fzf_action = {
 let g:fzf_layout = { 'window': 'enew' }
 
 " YCM
+let g:ycm_show_diagnostics_ui = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_language_server =
