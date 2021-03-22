@@ -132,7 +132,7 @@ map <C-p> :cp<CR>
 map <C-\> :GtagsCursor<CR>
 
 " Tagbar
-let g:tagbar_position = 'right'
+let g:tagbar_position = 'left'
 let g:tagbar_sort = 0
 let g:tagbar_compact = 1
 let g:tagbar_indent = 1
