@@ -254,7 +254,7 @@ let g:ycm_language_server =
   \   'project_root_files': [ '.ccls-root', 'compile_commands.json'  ]
   \ }]
 let g:ycm_auto_hover = ''
-nmap <leader>d <plug>(YCMHover)
+nmap gh <plug>(YCMHover)
 nmap gd :YcmCompleter GoTo<CR>
 nmap gy :YcmCompleter GoToType<CR>
 nmap gi :YcmCompleter GoToImplementation<CR>
