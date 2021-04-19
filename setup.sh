@@ -150,10 +150,13 @@ config_firefox() {
   # NOTE: need to toolkit.legacyUserProfileCustomizations.stylesheets to true in about:config
   #       https://github.com/piroor/treestyletab/wiki/Code-snippets-for-custom-style-rules#slightly-betterworse-option-for-hiding-tabs-depending-on-what-you-want
   if [ -d "$FIREFOX_PROFILE" ]; then
-    d=$(ls -d "$FIREFOX_PROFILE"/*default*)
-    mkdir -p "$d"/chrome
-    cp "$ROOT"/firefox/userChrome.css "$d"/chrome
-    echo "Firefox's userChrome.css: $d/chrome/userChrome.css"
+    for d in $(ls -d "$FIREFOX_PROFILE"/*default*); do
+      mkdir -p "$d"/chrome
+      cd "$d"/chrome
+      do_link firefox/userChrome.css
+      do_link firefox/userContent.css
+      cd -
+    done
   fi
 }
 
