@@ -24,6 +24,10 @@ install_ctags() {
 
 install_ccls() {
   command -v ccls && return
+  if [ "$(uname -s)" == 'Darwin' ]; then
+    $PKG_INSTALL ccls
+    return
+  fi
   $PKG_INSTALL zlib1g-dev python3-dev clang-9 libclang-9-dev llvm-9-dev liblua5.2-dev libncurses5-dev rapidjson-dev ninja-build
   git clone https://github.com/MaskRay/ccls /tmp/ccls
   pushd /tmp/ccls
