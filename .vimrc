@@ -187,8 +187,8 @@ let g:lightline.colorscheme = 'solarized'
 let g:lightline.active = { 'left': [['filename','line']], 'right': [] }
 let g:lightline.inactive = { 'left': [['filename','line']], 'right': [] }
 let g:lightline.enable = { 'statusline': 1, 'tabline': 1 }
-let g:lightline.separator = { 'left': '', 'right': '' }
-let g:lightline.subseparator = { 'left': '', 'right': '' }
+"let g:lightline.separator = { 'left': '', 'right': '' }
+"let g:lightline.subseparator = { 'left': '', 'right': '' }
 
 " Quickfix
 "nnoremap <C-q> :cclose<CR> - use togglelist.vim ?
