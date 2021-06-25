@@ -117,6 +117,9 @@ config_zsh() {
   if [ ! -d .oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
     git clone https://github.com/zsh-users/zsh-autosuggestions .oh-my-zsh/custom/plugins/zsh-autosuggestions
   fi
+  if [ ! -d .oh-my-zsh/custom/plugins/zsh-completions ]; then
+    git clone https://github.com/zsh-users/zsh-completions .oh-my-zsh/custom/plugins/zsh-completions
+  fi
   rm -f .oh-my-zsh/themes/llseek.zsh-theme
   ln -svf "$ROOT"/llseek.zsh-theme .oh-my-zsh/themes/
   do_link .zshrc
