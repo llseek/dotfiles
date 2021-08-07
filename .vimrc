@@ -64,7 +64,7 @@ set encoding=utf-8
 set fileencodings=utf-8
 set autoindent
 set smartindent
-set nonu
+set number
 set ruler
 set hlsearch
 set incsearch
