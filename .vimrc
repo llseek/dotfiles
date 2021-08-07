@@ -289,4 +289,4 @@ endfunction
 tmap <silent> <ScrollWheelUp> <c-w>:call EnterNormalMode()<CR>
 
 " Rooter
-let g:rooter_patterns = ['.git']
+let g:rooter_patterns = ['compile_commands.json', '.git']
