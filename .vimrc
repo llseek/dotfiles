@@ -40,8 +40,6 @@ Plug 'SirVer/ultisnips'
 Plug 'lifepillar/vim-solarized8'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
-Plug 'ycm-core/YouCompleteMe', { 'branch': 'legacy-c++11' }
-Plug 'jeaye/color_coded'
 Plug 'voldikss/vim-floaterm'
 Plug 'mmarchini/bpftrace.vim'
 Plug 'airblade/vim-rooter'
@@ -272,25 +270,6 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 let g:fzf_layout = { 'window': 'enew' }
 
-" YCM
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_language_server =
-  \ [{
-  \   'name': 'ccls',
-  \   'cmdline': [ 'ccls'  ],
-  \   'filetypes': [ 'c', 'cpp', 'cuda', 'objc', 'objcpp'  ],
-  \   'project_root_files': [ '.ccls-root', 'compile_commands.json'  ]
-  \ }]
-let g:ycm_auto_hover = ''
-nmap gh <plug>(YCMHover)
-nmap gd :YcmCompleter GoTo<CR>
-nmap gy :YcmCompleter GoToType<CR>
-nmap gi :YcmCompleter GoToImplementation<CR>
-nmap gr :YcmCompleter GoToReferences<CR>
-nmap gs :YcmCompleter GoToSymbol 
-
 " Termdebug
 packadd termdebug
 function! ExitNormalMode()
@@ -308,15 +287,6 @@ function! EnterNormalMode()
 endfunction
 
 tmap <silent> <ScrollWheelUp> <c-w>:call EnterNormalMode()<CR>
-
-" Color_coded
-hi link Member Normal
-hi link Variable Normal
-hi link EnumConstant Constant
-hi link StructDecl Type
-hi link UnionDecl Type
-hi link ClassDecl Type
-hi link EnumDecl Type
 
 " Rooter
 let g:rooter_patterns = ['.git']
