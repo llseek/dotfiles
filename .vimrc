@@ -37,6 +37,8 @@ Plug 'junegunn/gv.vim'
 Plug 'mhinz/vim-startify'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'lifepillar/vim-solarized8'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
@@ -270,6 +272,23 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 let g:fzf_layout = { 'window': 'enew' }
 
+" VIM-LSP
+if executable('ccls')
+   au User lsp_setup call lsp#register_server({
+      \ 'name': 'ccls',
+      \ 'cmd': {server_info->['ccls']},
+      \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
+      \ 'initialization_options': { 'highlight': { 'lsRanges': v:true } },
+      \ 'allowlist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
+      \ })
+endif
+let g:lsp_diagnostics_enabled = 0
+nmap gd :LspDefinition<CR>
+nmap gs :LspWorkspaceSymbol<CR>
+nmap gr :LspReferences<CR>
+nmap gi :LspImplementation<CR>
+nmap gt :LspTypeDefinition<CR>
+ 
 " Termdebug
 packadd termdebug
 function! ExitNormalMode()
