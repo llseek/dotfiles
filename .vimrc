@@ -57,7 +57,9 @@ noremap <Leader>r :source ~/.vimrc<CR>
 
 set exrc secure
 set mouse=a
+if !has('nvim')
 set ttymouse=xterm2
+endif
 set encoding=utf-8
 set fileencodings=utf-8
 set autoindent
