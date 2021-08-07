@@ -40,7 +40,7 @@ Plug 'SirVer/ultisnips'
 Plug 'lifepillar/vim-solarized8'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
-Plug 'llseek/YouCompleteMe', { 'branch': 'prio-c++17' }
+Plug 'ycm-core/YouCompleteMe', { 'branch': 'legacy-c++11' }
 Plug 'jeaye/color_coded'
 Plug 'voldikss/vim-floaterm'
 Plug 'mmarchini/bpftrace.vim'
