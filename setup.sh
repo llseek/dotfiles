@@ -102,8 +102,8 @@ config_vim() {
   vim --noplugin +PlugInstall +qall
   install_ctags
   install_ccls
-  install_ycm
-  install_cc
+  #install_ycm
+  #install_cc
 }
 
 install_zsh() {
