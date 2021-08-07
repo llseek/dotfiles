@@ -191,6 +191,10 @@ let g:lightline.enable = { 'statusline': 1, 'tabline': 1 }
 let g:lightline.tabline = { 'left': [['buffers']], 'right': [[]] }
 let g:lightline.component_expand = { 'buffers': 'lightline#bufferline#buffers' }
 let g:lightline.component_type = { 'buffers': 'tabsel' }
+if has('nvim')
+let g:lightline.component_raw = {'buffers': 1}
+let g:lightline#bufferline#clickable = 1
+endif
 let g:lightline#bufferline#show_number = 2
 let g:lightline#bufferline#number_map = {
   \ 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴',
