@@ -24,8 +24,6 @@ Plug 'vim-scripts/gtags.vim'
 Plug 'vim-scripts/DrawIt'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'itchyny/lightline.vim'
-Plug 'mengelbrecht/lightline-bufferline'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tpope/vim-fugitive'
@@ -185,25 +183,6 @@ endfunction
 " au VimEnter * :call OpenNERDTree()
 
 au BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" Lightline
-let g:lightline = {}
-let g:lightline.colorscheme = 'solarized'
-let g:lightline.active = { 'left': [], 'right': [] }
-let g:lightline.inactive = { 'left': [], 'right': [] }
-let g:lightline.enable = { 'statusline': 1, 'tabline': 1 }
-let g:lightline.separator = { 'left': '', 'right': '' }
-let g:lightline.subseparator = { 'left': '', 'right': '' }
-let g:lightline.tabline = { 'left': [['buffers']], 'right': [[]] }
-let g:lightline.component_expand = { 'buffers': 'lightline#bufferline#buffers' }
-let g:lightline.component_type = { 'buffers': 'tabsel' }
-if has('nvim')
-let g:lightline.component_raw = {'buffers': 1}
-let g:lightline#bufferline#clickable = 1
-endif
-nmap bd :bdelete<CR>
-nmap bn :bnext<CR>
-nmap bp :bprevious<CR>
 
 " Quickfix
 "nnoremap <C-q> :cclose<CR> - use togglelist.vim ?
