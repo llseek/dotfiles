@@ -69,7 +69,7 @@ set number
 set ruler
 set hlsearch
 set incsearch
-set laststatus=2
+set laststatus=0
 set showtabline=2
 set backspace=indent,eol,start
 set fillchars+=vert:\ 
