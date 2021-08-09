@@ -45,6 +45,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'mmarchini/bpftrace.vim'
 Plug 'airblade/vim-rooter'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " General
