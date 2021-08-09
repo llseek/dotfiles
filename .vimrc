@@ -43,6 +43,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'mmarchini/bpftrace.vim'
 Plug 'airblade/vim-rooter'
+Plug 'bagrat/vim-buffet'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
@@ -273,3 +274,8 @@ tmap <silent> <ScrollWheelUp> <c-w>:call EnterNormalMode()<CR>
 
 " Rooter
 let g:rooter_patterns = ['compile_commands.json', '.git']
+
+" Buffet
+let g:buffet_always_show_tabline = 0
+let g:buffet_powerline_separators = 1
+let g:buffet_use_devicons = 1
