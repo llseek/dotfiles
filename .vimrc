@@ -35,7 +35,9 @@ Plug 'junegunn/gv.vim'
 Plug 'mhinz/vim-startify'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
+Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'lifepillar/vim-solarized8'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
@@ -253,6 +255,10 @@ nmap gs :LspWorkspaceSymbol<CR>
 nmap gr :LspReferences<CR>
 nmap gi :LspImplementation<CR>
 nmap gt :LspTypeDefinition<CR>
+hi LspCxxHlGroupMemberVariable guifg=#93a1a1
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
  
 " Termdebug
 packadd termdebug
