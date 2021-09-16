@@ -255,6 +255,17 @@ if executable('ccls')
       \ 'allowlist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
       \ })
 endif
+
+if executable('pyls')
+    " pip install python-language-server
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'initialization_options': { 'highlight': { 'lsRanges': v:true } },
+        \ 'allowlist': ['python'],
+        \ })
+endif
+
 let g:lsp_diagnostics_enabled = 0
 nmap gd :LspDefinition<CR>
 nmap gs :LspWorkspaceSymbol<CR>
