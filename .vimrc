@@ -211,8 +211,8 @@ let g:tmux_navigator_save_on_switch = 1
 " Fugitive
 nnoremap gst :Git status<CR>
 nnoremap gb :Git blame<CR>
-nnoremap gc :Gcommit -v<CR>
-nnoremap gc! :Gcommit --amend<CR>
+nnoremap gc :Git commit -v<CR>
+nnoremap gc! :Git commit --amend<CR>
 nnoremap gp :Git push<CR>
 nnoremap gup :Git pull --rebase<CR>
 nnoremap grbi :Git rebase -i<CR>
