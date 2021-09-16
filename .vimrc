@@ -311,6 +311,7 @@ let g:buffet_use_devicons = 1
 let g:buffet_tab_icon = ''
 function! g:BuffetSetCustomColors()
   hi! BuffetCurrentBuffer guibg=#268bd2 guifg=#002b36
+  hi! BuffetActiveBuffer guibg=#268bd2 guifg=#002b36
   hi! BuffetBuffer guibg=#002b36 guifg=#839496
   hi! BuffetTab guibg=#268bd2 guifg=#002b36
   hi! BuffetTrunc guibg=#b58900
