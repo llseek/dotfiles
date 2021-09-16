@@ -279,21 +279,27 @@ let g:deoplete#enable_at_startup = 1
  
 " Termdebug
 packadd termdebug
-function! ExitNormalMode()
+if !has('nvim')
+  function! ExitNormalMode()
     unmap <buffer> <silent> <RightMouse>
     call feedkeys("a")
-endfunction
+  endfunction
 
-function! EnterNormalMode()
+  function! EnterNormalMode()
     if &buftype == 'terminal' && mode('') == 't'
         set nonu
         call feedkeys("\<c-w>N")
         call feedkeys("\<c-y>")
         map <buffer> <silent> <RightMouse> :call ExitNormalMode()<CR>
     endif
-endfunction
+  endfunction
 
-tmap <silent> <ScrollWheelUp> <c-w>:call EnterNormalMode()<CR>
+  tmap <silent> <ScrollWheelUp> <c-w>:call EnterNormalMode()<CR>
+else
+  au TermOpen * startinsert
+  au TermOpen * set nonu
+  au TermOpen * nnoremap <buffer> <C-c> i<C-c>
+endif
 
 " Rooter
 let g:rooter_patterns = ['compile_commands.json', '.git']
