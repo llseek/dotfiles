@@ -316,3 +316,6 @@ function! g:BuffetSetCustomColors()
   hi! BuffetTab guibg=#268bd2 guifg=#002b36
   hi! BuffetTrunc guibg=#b58900
 endfunction
+
+" Clang-format
+map <C-f> :pyf /usr/share/vim/addons/syntax/clang-format.py<CR>
