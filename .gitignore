@@ -16,3 +16,4 @@ compile_commands.json
 *.patch
 .gdbinit
 .clang-format
+__pycache__
