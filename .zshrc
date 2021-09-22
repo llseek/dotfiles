@@ -53,6 +53,8 @@ ZSH_TMUX_AUTOSTART="false"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git git-flow tmux docker zsh-autosuggestions zsh-completions zsh-syntax-highlighting)
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=blue'
+
 # User configuration
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
