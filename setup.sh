@@ -120,6 +120,9 @@ config_zsh() {
   if [ ! -d .oh-my-zsh/custom/plugins/zsh-completions ]; then
     git clone https://github.com/zsh-users/zsh-completions .oh-my-zsh/custom/plugins/zsh-completions
   fi
+  if [ ! -d .oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting .oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+  fi
   rm -f .oh-my-zsh/themes/llseek.zsh-theme
   ln -svf "$ROOT"/llseek.zsh-theme .oh-my-zsh/themes/
   do_link .zshrc
