@@ -6,6 +6,7 @@
 $ sudo su
 # apt install socat
 # curl https://get.acme.sh | sh
+# ~/.acme.sh/acme.sh --register-account -m yxj0207@gmail.com
 # ~/.acme.sh/acme.sh --issue -d spinlock.xyz --standalone -k ec-256
 # ~/.acme.sh/acme.sh --installcert -d spinlock.xyz --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key --ecc
 # ~/.acme.sh/acme.sh --upgrade --auto-upgrade
