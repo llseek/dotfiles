@@ -55,6 +55,11 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'bagrat/vim-buffet'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+if has('nvim')
+  Plug 'mfussenegger/nvim-dap'
+  Plug 'mfussenegger/nvim-dap-python'
+  Plug 'rcarriga/nvim-dap-ui'
+endif
 call plug#end()
 
 " General
@@ -351,3 +356,20 @@ map <C-f> :pyf /usr/share/vim/addons/syntax/clang-format.py<CR>
 
 " Pandoc
 let g:pandoc#spell#enabled = 0
+
+" Nvim-dap
+if has('nvim')
+  lua require('dap-python').setup('python')
+  lua require('dapui').setup()
+
+  nnoremap <silent> <Leader>r <Cmd>lua require'dap'.continue()<CR>
+  nnoremap <silent> <Leader>c <Cmd>lua require'dap'.continue()<CR>
+  nnoremap <silent> <F6> <Cmd>lua require'dap'.run_last()<CR>
+  nnoremap <silent> <Leader>n <Cmd>lua require'dap'.step_over()<CR>
+  nnoremap <silent> <Leader>s <Cmd>lua require'dap'.step_into()<CR>
+  nnoremap <silent> <Leader>f <Cmd>lua require'dap'.step_out()<CR>
+  nnoremap <silent> <Leader>b <Cmd>lua require'dap'.toggle_breakpoint()<CR>
+  nnoremap <silent> <Leader>dr <Cmd>lua require'dap'.repl.toggle()<CR>
+  nnoremap <silent> <Leader>d <Cmd>lua require'dapui'.toggle()<CR>
+  nnoremap <silent> <Leader>e <Cmd>lua require'dapui'.eval()<CR>
+endif
