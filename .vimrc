@@ -53,6 +53,8 @@ Plug 'mmarchini/bpftrace.vim'
 Plug 'airblade/vim-rooter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'bagrat/vim-buffet'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 call plug#end()
 
 " General
@@ -346,3 +348,6 @@ endfunction
 
 " Clang-format
 map <C-f> :pyf /usr/share/vim/addons/syntax/clang-format.py<CR>
+
+" Pandoc
+let g:pandoc#spell#enabled = 0
