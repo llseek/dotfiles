@@ -63,9 +63,17 @@
     "rules": [
       {
         "type": "field",
+        "outboundTag": "proxy",
+        "domain": [
+          "github.com"
+        ]
+      },
+      {
+        "type": "field",
         "outboundTag": "direct",
         "domain": [
-          "geosite:cn"
+          "geosite:cn",
+          "hygon.cn"
         ]
       },
       {
