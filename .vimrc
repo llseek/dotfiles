@@ -364,6 +364,7 @@ if has('nvim')
   nnoremap <silent> <Leader>n <Cmd>lua require'dap'.step_over()<CR>
   nnoremap <silent> <Leader>s <Cmd>lua require'dap'.step_into()<CR>
   nnoremap <silent> <Leader>f <Cmd>lua require'dap'.step_out()<CR>
+  nnoremap <silent> <Leader>u <Cmd>lua require'dap'.run_to_cursor()<CR>
   nnoremap <silent> <Leader>b <Cmd>lua require'dap'.toggle_breakpoint()<CR>
   nnoremap <silent> <Leader>dr <Cmd>lua require'dap'.repl.toggle()<CR>
   nnoremap <silent> <Leader>d <Cmd>lua require'dapui'.toggle()<CR>
