@@ -136,12 +136,28 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
-tnoremap <C-j> <C-w>j
-tnoremap <C-k> <C-w>k
-tnoremap <C-l> <C-w>l
-tnoremap <C-h> <C-w>h
 set splitbelow
 set splitright
+
+" Terminal
+if has('nvim')
+  tnoremap <Esc> <C-\><C-N>
+  tnoremap <C-[> <C-\><C-N>
+  tnoremap <C-h> <C-\><C-N><C-w>h
+  tnoremap <C-j> <C-\><C-N><C-w>j
+  tnoremap <C-k> <C-\><C-N><C-w>k
+  tnoremap <C-l> <C-\><C-N><C-w>l
+  au TermOpen * startinsert
+  au TermOpen * set nonu
+  au BufEnter * if &buftype == 'terminal' | startinsert | endif
+else
+  tnoremap <Esc> <C-w>N
+  tnoremap <C-[> <C-w>N
+  tnoremap <C-j> <C-w>j
+  tnoremap <C-k> <C-w>k
+  tnoremap <C-l> <C-w>l
+  tnoremap <C-h> <C-w>h
+endif
 
 " Gtags
 map <C-n> :cn<CR>
@@ -326,10 +342,6 @@ if !has('nvim')
   endfunction
 
   tmap <silent> <ScrollWheelUp> <c-w>:call EnterNormalMode()<CR>
-else
-  au TermOpen * startinsert
-  au TermOpen * set nonu
-  au TermOpen * nnoremap <buffer> <C-c> i<C-c>
 endif
 
 " Rooter
