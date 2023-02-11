@@ -89,6 +89,7 @@ set fillchars+=vert:\
 set updatetime=1000
 set signcolumn=auto
 set noequalalways
+set wildmode
 " :help last-position-jump
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
