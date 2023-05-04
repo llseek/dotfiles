@@ -17,7 +17,7 @@
       }
     },
     {
-      "port": 8080,
+      "port": 1081,
       "listen": "127.0.0.1",
       "protocol": "http",
       "settings": {},
@@ -33,11 +33,10 @@
       "settings": {
         "vnext": [
           {
-            "address": "spinlock.xyz",
+            "address": "llseek.com",
             "users": [
               {
-                "id": "116e07b5-0da8-4551-ac1f-b1fa24a076db",
-                "alterId": 64
+                "id": "dc7266c5-32b7-4db7-aa80-b7b401631020"
               }
             ],
             "port": 443
@@ -48,7 +47,7 @@
         "network": "ws",
         "security": "tls",
         "wsSettings": {
-          "path": "/a9059e/"
+          "path": "/about/"
         }
       }
     },
@@ -65,7 +64,9 @@
         "type": "field",
         "outboundTag": "proxy",
         "domain": [
-          "github.com"
+          "github.com",
+          "openai.com",
+          "bing.com"
         ]
       },
       {
