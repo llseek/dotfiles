@@ -49,7 +49,6 @@ Plug 'voldikss/vim-floaterm'
 Plug 'mmarchini/bpftrace.vim'
 Plug 'airblade/vim-rooter'
 Plug 'ryanoasis/vim-devicons'
-Plug 'bagrat/vim-buffet'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 if has('nvim')
@@ -359,19 +358,6 @@ endif
 
 " Rooter
 let g:rooter_patterns = ['compile_commands.json', '.git']
-
-" Buffet
-let g:buffet_always_show_tabline = 1
-let g:buffet_powerline_separators = 1
-let g:buffet_use_devicons = 1
-let g:buffet_tab_icon = ''
-function! g:BuffetSetCustomColors()
-  hi! BuffetCurrentBuffer guibg=#268bd2 guifg=#002b36
-  hi! BuffetActiveBuffer guibg=#268bd2 guifg=#002b36
-  hi! BuffetBuffer guibg=#002b36 guifg=#839496
-  hi! BuffetTab guibg=#268bd2 guifg=#002b36
-  hi! BuffetTrunc guibg=#b58900
-endfunction
 
 " Clang-format
 map <C-f> :pyf /usr/share/vim/addons/syntax/clang-format.py<CR>
