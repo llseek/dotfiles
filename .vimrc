@@ -51,6 +51,7 @@ Plug 'airblade/vim-rooter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'gcmt/taboo.vim'
 if has('nvim')
   Plug 'mfussenegger/nvim-dap'
   Plug 'mfussenegger/nvim-dap-python'
@@ -73,6 +74,8 @@ noremap <Leader>r :source ~/.vimrc<CR>
 nmap bd :bdelete<CR>
 nmap bn :bnext<CR>
 nmap bp :bprevious<CR>
+nmap tn :tabnext<CR>
+nmap tp :tabprevious<CR>
 
 set exrc secure
 set mouse=a
@@ -95,6 +98,7 @@ set updatetime=1000
 set signcolumn=auto
 set noequalalways
 set wildmode
+set sessionoptions+=globals
 " :help last-position-jump
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
@@ -335,7 +339,7 @@ hi LspCxxHlGroupMemberVariable guifg=#93a1a1
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
- 
+
 " Termdebug
 packadd termdebug
 if !has('nvim')
@@ -364,6 +368,9 @@ map <C-f> :pyf /usr/share/vim/addons/syntax/clang-format.py<CR>
 
 " Pandoc
 let g:pandoc#spell#enabled = 0
+
+" Taboo
+let g:taboo_tabline = 0
 
 " Nvim-dap
 if has('nvim')
