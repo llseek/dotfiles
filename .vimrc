@@ -151,15 +151,14 @@ set splitright
 
 " Terminal
 if has('nvim')
-  tnoremap <Esc> <C-\><C-N>
   tnoremap <C-[> <C-\><C-N>
   tnoremap <C-h> <C-\><C-N><C-w>h
   tnoremap <C-j> <C-\><C-N><C-w>j
   tnoremap <C-k> <C-\><C-N><C-w>k
   tnoremap <C-l> <C-\><C-N><C-w>l
-  au TermOpen * startinsert
-  au TermOpen * set nonu
-  au BufEnter * if &buftype == 'terminal' | startinsert | endif
+  au TermOpen * startinsert | set nonu
+  au TermEnter * set nonu
+  au BufEnter * if &buftype == 'terminal' | startinsert | else | set nu | endif
 else
   tnoremap <Esc> <C-w>N
   tnoremap <C-[> <C-w>N
