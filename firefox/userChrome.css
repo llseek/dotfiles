@@ -6,10 +6,6 @@
 	display: none;
 }
 
-#sidebar-splitter {
-	display: none;
-}
-
 #sidebar {
 	max-width: none !important;
 	min-width: 250px !important;
