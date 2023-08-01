@@ -25,7 +25,6 @@ Plug 'vim-scripts/DrawIt'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'itchyny/lightline.vim'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -221,12 +220,6 @@ endfunction
 " au VimEnter * :call OpenNERDTree()
 
 au BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" Lightline
-let g:lightline = {}
-let g:lightline.colorscheme = 'solarized'
-let g:lightline.separator = { 'left': '', 'right': '' }
-let g:lightline.subseparator = { 'left': '', 'right': '' }
 
 " Quickfix
 "nnoremap <C-q> :cclose<CR> - use togglelist.vim ?
