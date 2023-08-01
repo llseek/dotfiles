@@ -39,10 +39,8 @@ Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
-Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'lighttiger2505/deoplete-vim-lsp'
 Plug 'lifepillar/vim-solarized8'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
@@ -321,9 +319,6 @@ nmap gr :LspReferences<CR>
 nmap gi :LspImplementation<CR>
 nmap gt :LspTypeDefinition<CR>
 hi LspCxxHlGroupMemberVariable guifg=#93a1a1
-
-" Deoplete
-let g:deoplete#enable_at_startup = 1
 
 " Termdebug
 packadd termdebug
