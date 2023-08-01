@@ -60,6 +60,7 @@ if has('nvim')
   Plug 'ahmedkhalf/project.nvim'
   Plug 'rmagatti/auto-session'
   Plug 'rmagatti/session-lens'
+  Plug 'folke/zen-mode.nvim'
 endif
 call plug#end()
 
@@ -377,4 +378,19 @@ if has('nvim')
   nnoremap rg :Telescope live_grep<CR>
   nnoremap fb :Telescope buffers<CR>
   nnoremap ft :Telescope telescope-tabs list_tabs <CR>
+endif
+
+" Zen-mode
+if has('nvim')
+lua << EOF
+require('zen-mode').setup({
+  window = {
+    backdrop = 1.0,
+    width = 1.0,
+    height = 1.0
+  }
+})
+EOF
+nnoremap <C-w>o :ZenMode<CR>
+tnoremap <C-w>o <C-\><C-N>:ZenMode<CR>
 endif
