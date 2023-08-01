@@ -380,6 +380,17 @@ if has('nvim')
   nnoremap ft :Telescope telescope-tabs list_tabs <CR>
 endif
 
+" Auto-session
+if has('nvim')
+lua << EOF
+require('auto-session').setup({
+  auto_session_enable_last_session = true,
+  auto_save_enabled = true,
+  auto_session_create_enabled = false
+})
+EOF
+endif
+
 " Zen-mode
 if has('nvim')
 lua << EOF
