@@ -151,7 +151,7 @@ set splitright
 
 " Terminal
 if has('nvim')
-  tnoremap <C-[> <C-\><C-N>
+  "tnoremap <C-[> <C-\><C-N>
   tnoremap <C-h> <C-\><C-N><C-w>h
   tnoremap <C-j> <C-\><C-N><C-w>j
   tnoremap <C-k> <C-\><C-N><C-w>k
