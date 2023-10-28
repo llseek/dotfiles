@@ -23,8 +23,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-scripts/a.vim'
 Plug 'vim-scripts/gtags.vim'
 Plug 'vim-scripts/DrawIt'
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tpope/vim-fugitive'
@@ -180,46 +178,6 @@ let g:tagbar_foldlevel = 0
 let g:tagbar_autoshowtag = 1
 let g:tagbar_singleclick = 1
 "au FileType c,cpp nested :TagbarOpen
-
-" Nerdtree
-let NERDTreeShowHidden=1
-let NERDTreeMouseMode=3
-let NERDTreeMinimalUI=1
-let NERDTreeIgnore = ['\.swp$', '.git', '.ccls-cache']
-
-function! s:isNERDTreeOpen()
-  return exists("g:NERDTree") && g:NERDTree.IsOpen()
-endfunction
-
-function! s:isInsideCwd()
-  return -1 != stridx(expand('%:p'), getcwd())
-endfunction
-
-function! s:isNERDTree()
-  return 0 == match(bufname(''), 'NERD_tree_')
-endfunction
-
-function! s:isTagbar()
-  return 0 == match(bufname(''), '__Tagbar__')
-endfunction
-
-function! SyncNERDTree()
-  if &modifiable && !&diff && s:isNERDTreeOpen() && s:isInsideCwd() && !s:isNERDTree() && !s:isTagbar()
-    NERDTreeFind | wincmd p
-  endif
-endfunction
-
-au BufEnter * call SyncNERDTree()
-
-function! OpenNERDTree()
-  if exists(':NERDTree')
-    NERDTree | wincmd w
-  endif
-endfunction
-
-" au VimEnter * :call OpenNERDTree()
-
-au BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Quickfix
 "nnoremap <C-q> :cclose<CR> - use togglelist.vim ?
