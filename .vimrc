@@ -54,8 +54,6 @@ if has('nvim')
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
   Plug 'ahmedkhalf/project.nvim'
-  Plug 'rmagatti/auto-session'
-  Plug 'rmagatti/session-lens'
   Plug 'folke/zen-mode.nvim'
 endif
 call plug#end()
@@ -312,17 +310,6 @@ if has('nvim')
   nnoremap rg :Telescope live_grep<CR>
   nnoremap fb :Telescope buffers<CR>
   nnoremap ft :Telescope telescope-tabs list_tabs <CR>
-endif
-
-" Auto-session
-if has('nvim')
-lua << EOF
-require('auto-session').setup({
-  auto_session_enable_last_session = true,
-  auto_save_enabled = true,
-  auto_session_create_enabled = false
-})
-EOF
 endif
 
 " Zen-mode
