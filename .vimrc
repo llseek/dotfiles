@@ -253,7 +253,7 @@ let g:UltiSnipsExpandTrigger="<c-e>"
 
 " Fzf
 if !has('nvim')
-  map ff :Telescope find_files<CR>
+  map ff :Files<CR>
   map rg :Rg<CR>
   map fb :Buffers<CR>
   map fc :Commits<CR>
