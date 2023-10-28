@@ -33,7 +33,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/gv.vim'
-Plug 'mhinz/vim-startify'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'prabirshrestha/vim-lsp'
@@ -248,13 +247,6 @@ nnoremap ga :GitGutterStageHunk<CR>
 nnoremap gu :GitGutterUndoHunk<CR>
 nmap gk <plug>(GitGutterPrevHunk)zz
 nmap gj <plug>(GitGutterNextHunk)zz
-
-" Startify
-let g:startify_session_dir = '.session'
-let g:startify_session_before_save = [
-  \ 'silent! NERDTreeClose',
-  \ 'silent! TagbarClose'
-  \ ]
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<c-e>"
