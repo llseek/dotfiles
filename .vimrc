@@ -96,7 +96,6 @@ set updatetime=1000
 set signcolumn=auto
 set noequalalways
 set wildmode
-set sessionoptions+=globals
 " :help last-position-jump
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
@@ -146,6 +145,11 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
 set splitbelow
 set splitright
+
+" Session
+set sessionoptions+=resize,tabpages,globals
+au VimLeave * :mks! ~/.vim/session.vim
+au VimEnter * :so ~/.vim/session.vim
 
 " Terminal
 if has('nvim')
