@@ -106,7 +106,7 @@ if exists('+termguicolors')
 else
   set t_Co=256
 endif
-set background=dark
+set background=light
 colorscheme solarized8
 if &background == 'light'
   hi VertSplit guibg=#eee8d5
