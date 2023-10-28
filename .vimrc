@@ -161,8 +161,6 @@ if has('nvim')
   au TermEnter * set nonu
   au BufEnter * if &buftype == 'terminal' | startinsert | else | set nu | endif
 else
-  tnoremap <Esc> <C-w>N
-  tnoremap <C-[> <C-w>N
   tnoremap <C-j> <C-w>j
   tnoremap <C-k> <C-w>k
   tnoremap <C-l> <C-w>l
