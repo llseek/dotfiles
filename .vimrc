@@ -51,9 +51,6 @@ if has('nvim')
   Plug 'mfussenegger/nvim-dap'
   Plug 'mfussenegger/nvim-dap-python'
   Plug 'rcarriga/nvim-dap-ui'
-  Plug 'nvim-lua/plenary.nvim'
-  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
-  Plug 'ahmedkhalf/project.nvim'
   Plug 'folke/zen-mode.nvim'
 endif
 call plug#end()
@@ -301,15 +298,6 @@ if has('nvim')
   nnoremap <silent> <Leader>dr <Cmd>lua require'dap'.repl.toggle()<CR>
   nnoremap <silent> <Leader>d <Cmd>lua require'dapui'.toggle()<CR>
   nnoremap <silent> <Leader>e <Cmd>lua require'dapui'.eval()<CR>
-endif
-
-" Telescope
-if has('nvim')
-  lua require('telescope').setup()
-  nnoremap ff :Telescope find_files<CR>
-  nnoremap rg :Telescope live_grep<CR>
-  nnoremap fb :Telescope buffers<CR>
-  nnoremap ft :Telescope telescope-tabs list_tabs <CR>
 endif
 
 " Zen-mode
