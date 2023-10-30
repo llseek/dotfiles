@@ -82,6 +82,7 @@ set autoindent
 set smartindent
 set number
 set ruler
+set cursorline
 set hlsearch
 set incsearch
 set laststatus=1
