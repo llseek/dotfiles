@@ -47,6 +47,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'gcmt/taboo.vim'
+Plug 'github/copilot.vim'
 if has('nvim')
   Plug 'mfussenegger/nvim-dap'
   Plug 'mfussenegger/nvim-dap-python'
