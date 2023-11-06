@@ -158,6 +158,10 @@ else
   tnoremap <C-k> <C-w>k
   tnoremap <C-l> <C-w>l
   tnoremap <C-h> <C-w>h
+  nnoremap <C-t>s :term<CR>
+  nnoremap <C-t>v :vert term<CR>
+  tnoremap <C-t>s <C-w>N:term<CR><C-w>pi<C-w>p
+  tnoremap <C-t>v <C-w>N:vert term<CR><C-w>pi<C-w>p
 endif
 
 " Gtags
