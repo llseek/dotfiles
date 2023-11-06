@@ -141,8 +141,8 @@ set splitright
 
 " Session
 set sessionoptions+=resize,tabpages,globals
-au VimLeave * if &filetype !=# 'gitcommit' | :mks! ~/.vim/session.vim | endif
-au VimEnter * if &filetype !=# 'gitcommit' | :so ~/.vim/session.vim | endif
+au VimLeave * if &filetype !=# 'gitcommit' && &filetype !=# 'gitrebase' | :mks! ~/.vim/session.vim | endif
+au VimEnter * if &filetype !=# 'gitcommit' && &filetype !=# 'gitrebase' | :so ~/.vim/session.vim | endif
 
 " Terminal
 if has('nvim')
