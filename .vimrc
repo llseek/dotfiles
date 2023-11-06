@@ -220,9 +220,16 @@ if !has('nvim')
   let $FZF_DEFAULT_COMMAND = 'rg --files --hidden '
   let g:fzf_action = {
     \ 'ctrl-t': 'tab split',
-    \ 'ctrl-x': 'split',
+    \ 'ctrl-s': 'split',
     \ 'ctrl-v': 'vsplit' }
   let g:fzf_layout = { 'window': 'enew' }
+
+  command! -bang -nargs=* RgExact
+  \ call fzf#vim#grep(
+  \   'rg -F --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
+
+  map fg :execute 'RgExact ' . expand('<cword>') <Cr>
 endif
 
 " VIM-LSP
