@@ -128,6 +128,8 @@ alias dl='aria2c -s 16 -x 16'
 alias s='sudo screen /dev/ttyUSB0 115200,cs8,-ixon,-ixoff'
 alias ssh='autossh -X'
 
+export BAT_THEME="Solarized (light)"
+
 # source personal configs
 [[ -f ~/..zshrc ]] && source ~/..zshrc
 
