@@ -91,6 +91,7 @@ set backspace=indent,eol,start
 set fillchars+=vert:\ 
 set updatetime=1000
 set noequalalways
+set matchpairs+=<:>
 " :help last-position-jump
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
