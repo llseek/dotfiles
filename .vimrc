@@ -1,4 +1,5 @@
 " Memo
+"
 " text object:
 " diw - delete the word that cursor is on
 " ciw - edit the word that cursor is on
@@ -12,6 +13,20 @@
 " yss'  - add surround around current line
 " ysip' - add surround around current paragraph
 " S'    - add surround around selection
+"
+" window:
+" <C-w>hjkl - move to window
+" <C-w>n    - new window
+" <C-w>o    - close other windows
+" <C-w>s    - split horizontally
+" <C-w>v    - split vertically
+" <C-w>q    - close window
+" <C-w>t    - open terminal
+" <C-w>T    - open terminal vertically
+"
+" tab:
+" gt - next tab
+" gT - previous tab
 
 " Plug
 if empty(glob('~/.vim/autoload/plug.vim'))
