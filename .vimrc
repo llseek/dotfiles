@@ -130,10 +130,6 @@ au FileType cpp setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
 au FileType cmake setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
 
 " Split
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-nnoremap <C-h> <C-w>h
 set splitbelow
 set splitright
 
@@ -153,10 +149,6 @@ if has('nvim')
   au TermEnter * set nonu
   au BufEnter * if &buftype == 'terminal' | startinsert | else | set nu | endif
 else
-  tnoremap <C-j> <C-w>j
-  tnoremap <C-k> <C-w>k
-  tnoremap <C-l> <C-w>l
-  tnoremap <C-h> <C-w>h
   nnoremap <C-t>s :term<CR>
   nnoremap <C-t>v :vert term<CR>
   tnoremap <C-t>s <C-w>N:term<CR><C-w>pi<C-w>p
