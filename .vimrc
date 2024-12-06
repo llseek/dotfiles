@@ -149,10 +149,10 @@ if has('nvim')
   au TermEnter * set nonu
   au BufEnter * if &buftype == 'terminal' | startinsert | else | set nu | endif
 else
-  nnoremap <C-t>s :term<CR>
-  nnoremap <C-t>v :vert term<CR>
-  tnoremap <C-t>s <C-w>N:term<CR><C-w>pi<C-w>p
-  tnoremap <C-t>v <C-w>N:vert term<CR><C-w>pi<C-w>p
+  noremap <C-w>t :term<CR>
+  noremap <C-w>T :vert term<CR>
+  tnoremap <C-w>t <C-w>:term<CR>
+  tnoremap <C-w>T <C-w>:vert term<CR>
 endif
 
 " Gtags
