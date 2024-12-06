@@ -23,7 +23,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-scripts/a.vim'
 Plug 'vim-scripts/gtags.vim'
 Plug 'vim-scripts/DrawIt'
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tmux-plugins/vim-tmux'
@@ -221,14 +220,6 @@ au FileType qf call AdjustWindowHeight(7, 12)
 function! AdjustWindowHeight(minheight, maxheight)
   exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
-
-" Tmux navigator
-let g:tmux_navigator_no_mappings = 1
-nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
-let g:tmux_navigator_save_on_switch = 1
 
 " Fugitive
 nnoremap gst :Git status<CR>
