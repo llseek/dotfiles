@@ -65,11 +65,8 @@ map ,e :e <C-R>=expand("%:h") . "/" <CR>
 map ,s :split <C-R>=expand("%:h") . "/" <CR>
 map ,v :vsplit <C-R>=expand("%:h") . "/" <CR>
 noremap <Leader>r :source ~/.vimrc<CR>
-nmap bd :bdelete<CR>
-nmap bn :bnext<CR>
-nmap bp :bprevious<CR>
-nmap tn :tabnext<CR>
-nmap tp :tabprevious<CR>
+tnoremap gt <C-w>:tabnext<CR>
+tnoremap gT <C-w>:tabprevious<CR>
 
 set exrc secure
 set mouse=a
