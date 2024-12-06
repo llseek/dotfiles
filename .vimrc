@@ -53,7 +53,6 @@ if has('nvim')
   Plug 'mfussenegger/nvim-dap'
   Plug 'mfussenegger/nvim-dap-python'
   Plug 'rcarriga/nvim-dap-ui'
-  Plug 'folke/zen-mode.nvim'
 endif
 call plug#end()
 
@@ -337,19 +336,4 @@ if has('nvim')
   nnoremap <silent> <Leader>dr <Cmd>lua require'dap'.repl.toggle()<CR>
   nnoremap <silent> <Leader>d <Cmd>lua require'dapui'.toggle()<CR>
   nnoremap <silent> <Leader>e <Cmd>lua require'dapui'.eval()<CR>
-endif
-
-" Zen-mode
-if has('nvim')
-lua << EOF
-require('zen-mode').setup({
-  window = {
-    backdrop = 1.0,
-    width = 1.0,
-    height = 1.0
-  }
-})
-EOF
-nnoremap <C-w>o :ZenMode<CR>
-tnoremap <C-w>o <C-\><C-N>:ZenMode<CR>
 endif
