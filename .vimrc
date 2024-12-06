@@ -277,7 +277,6 @@ nmap gd :LspDefinition<CR>
 nmap gs :LspWorkspaceSymbol<CR>
 nmap gr :LspReferences<CR>
 nmap gi :LspImplementation<CR>
-nmap gt :LspTypeDefinition<CR>
 hi LspCxxHlGroupMemberVariable guifg=#93a1a1
 
 " Termdebug
