@@ -130,6 +130,10 @@ alias ssh='autossh -X'
 
 export BAT_THEME="Solarized (light)"
 
+# proxy
+export http_proxy=http://localhost:1081
+export https_proxy=http://localhost:1081
+
 # source personal configs
 [[ -f ~/..zshrc ]] && source ~/..zshrc
 
