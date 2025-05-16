@@ -105,7 +105,7 @@ config_vim() {
   do_link .vimrc
   vim --noplugin +PlugInstall +qall
   install_ctags
-  install_ccls
+  #install_ccls
   #install_ycm
   #install_cc
 }
