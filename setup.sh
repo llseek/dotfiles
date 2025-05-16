@@ -85,7 +85,7 @@ install_vim() {
     return
   fi
 
-  $PKG_INSTALL xorg-dev liblua5.2-dev autoconf automake pkg-config
+  $PKG_INSTALL xorg-dev liblua5.2-dev autoconf automake pkg-config python3-dev
   sudo ln -sf /usr/include/{lua5.2,lua}
   sudo ln -sf /usr/lib/x86_64-linux-gnu/{liblua5.2.so,liblua.so}
   rm -rf /tmp/vim
