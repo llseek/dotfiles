@@ -118,6 +118,7 @@ export CVSEDITOR=vim
 # locale
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export LANGUAGE=en_US:en
 
 export DISPLAY=:0
 pgrep Xorg > /dev/null && setxkbmap -option caps:ctrl_modifier
