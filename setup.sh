@@ -220,10 +220,15 @@ if [ "$(uname -s)" == 'Darwin' ]; then
   FIREFOX_PROFILE='Library/Application\ Support/Firefox/Profiles'
   FONTS_DIR='Library/Fonts'
 else
-  sudo apt -y update
-  PKG_INSTALL='sudo apt -y install'
+  os_release="$(cat /etc/os-release)"
   FIREFOX_PROFILE='.mozilla/firefox'
   FONTS_DIR='.fonts'
+  if [[ "$os_release" =~ "Kylin" ]]; then
+    PKG_INSTALL='sudo yum -y install'
+  else
+    sudo apt -y update
+    PKG_INSTALL='sudo apt -y install'
+  fi
 fi
 
 cd "$HOME"
