@@ -35,6 +35,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin('~/.vim/plugged')
+Plug 'vim-scripts/netrw.vim'
 Plug 'vim-scripts/a.vim'
 Plug 'vim-scripts/gtags.vim'
 Plug 'vim-scripts/DrawIt'
