@@ -94,7 +94,7 @@ alias gds='git diff --staged'
 alias gfp='git format-patch'
 alias gfpk='git format-patch -k'
 alias glog='git log --oneline'
-alias vi='nvim'
+alias vi='vim -u NONE'
 alias l='ls'
 alias sudo='sudo '
 
