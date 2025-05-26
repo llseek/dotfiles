@@ -130,7 +130,13 @@ config_zsh() {
   rm -f .oh-my-zsh/themes/llseek.zsh-theme
   ln -svf "$ROOT"/llseek.zsh-theme .oh-my-zsh/themes/
   do_link .zshrc
-  sudo chsh -s "$(command -v zsh)" $LOGNAME
+  if systemctl list-units | grep -q sssd.service; then
+    # ldap scenario
+    sudo sss_override user-add $LOGNAME -s "$(command -v zsh)"
+    sudo systemctl restart sssd
+  else
+    sudo chsh -s "$(command -v zsh)" $LOGNAME
+  fi
 }
 
 install_tmux() {
