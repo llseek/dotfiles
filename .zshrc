@@ -122,7 +122,6 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US:en
 
 export DISPLAY=:0
-pgrep Xorg > /dev/null && setxkbmap -option caps:ctrl_modifier
 
 alias glog='git log --pretty=format:"%Cred%h %Cgreen%aN%Cblue%d %Creset%s"'
 alias d='dmesg | less +G'
