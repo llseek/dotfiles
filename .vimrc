@@ -64,6 +64,7 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'gcmt/taboo.vim'
 Plug 'github/copilot.vim'
+Plug 'DanBradbury/copilot-chat.vim'
 if has('nvim')
   Plug 'mfussenegger/nvim-dap'
   Plug 'mfussenegger/nvim-dap-python'
