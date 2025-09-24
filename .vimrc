@@ -327,6 +327,9 @@ let g:pandoc#spell#enabled = 0
 " Taboo
 let g:taboo_tabline = 0
 
+" Copilot
+let g:copilot_node_command = "~/.nvm/versions/node/v22.19.0/bin/node"
+
 " Nvim-dap
 if has('nvim')
   lua require('dap-python').setup('python')
