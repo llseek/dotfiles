@@ -64,6 +64,7 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'gcmt/taboo.vim'
 Plug 'wellle/context.vim'
+Plug 'pgr0ss/vim-github-url'
 Plug 'github/copilot.vim'
 Plug 'DanBradbury/copilot-chat.vim'
 if has('nvim')
