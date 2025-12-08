@@ -22,6 +22,22 @@ install_ctags() {
   popd
 }
 
+install_global_pygments_plugin() {
+  $PKG_INSTALL python2.7
+  wget https://bootstrap.pypa.io/pip/2.7/get-pip.py -O /tmp/get-pip.py
+  python2.7 /tmp/get-pip.py
+  python2.7 -m pip install pygments
+  rm -rf /tmp/global-pygments-plugin
+  git clone https://github.com/yoshizow/global-pygments-plugin /tmp/global-pygments-plugin
+  pushd /tmp/global-pygments-plugin
+  ./reconf.sh
+  ./configure --prefix=/usr/local
+  make -j16
+  sudo make install
+  wget https://raw.githubusercontent.com/yoshizow/global-pygments-plugin/refs/heads/master/sample.globalrc -O $HOME/.globalrc
+  popd
+}
+
 install_ccls() {
   command -v ccls && return
   if [ "$(uname -s)" == 'Darwin' ]; then
@@ -105,6 +121,7 @@ config_vim() {
   do_link .vimrc
   vim --noplugin +PlugInstall +qall
   install_ctags
+  install_global_pygments_plugin
   #install_ccls
   #install_ycm
   #install_cc
