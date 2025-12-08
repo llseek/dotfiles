@@ -262,7 +262,8 @@ $PKG_INSTALL global             \
              cmake              \
              fontconfig         \
              lsof               \
-             bear
+             bear               \
+             ripgrep
 
 if [ "$(uname -s)" = 'Darwin' ]; then
   $PKG_INSTALL rg bat
