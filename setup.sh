@@ -22,8 +22,26 @@ install_ctags() {
   popd
 }
 
+install_python2() {
+  if command -v python2.7; then
+    return
+  fi
+  $PKG_INSTALL libreadline-dev libbz2-dev libsqlite3-dev libssl-dev
+  wget https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz -O /tmp/Python-2.7.18.tgz
+  pushd /tmp/
+  tar zxf Python-2.7.18.tgz
+  cd Python-2.7.18
+  ./configure --prefix=/usr/local --enable-optimizations
+  make -j16
+  sudo make install
+  popd
+}
+
 install_global_pygments_plugin() {
-  $PKG_INSTALL python2.7
+  install_python2
+  if [ -f /usr/local/lib/gtags/pygments-parser.so ]; then
+    return
+  fi
   wget https://bootstrap.pypa.io/pip/2.7/get-pip.py -O /tmp/get-pip.py
   python2.7 /tmp/get-pip.py
   python2.7 -m pip install pygments
